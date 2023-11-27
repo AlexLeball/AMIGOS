@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +37,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_favorites_on_event_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "registrations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
@@ -44,6 +54,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_registrations_on_event_id"
     t.index ["user_id"], name: "index_registrations_on_user_id"
+  end
+
+  create_table "user_categories", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_user_categories_on_category_id"
+    t.index ["user_id"], name: "index_user_categories_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,6 +85,12 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
 
   add_foreign_key "events", "categories"
   add_foreign_key "events", "users"
+
+  add_foreign_key "favorites", "events"
+  add_foreign_key "favorites", "users"
+
   add_foreign_key "registrations", "events"
   add_foreign_key "registrations", "users"
+  add_foreign_key "user_categories", "categories"
+  add_foreign_key "user_categories", "users"
 end
