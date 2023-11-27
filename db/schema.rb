@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -85,10 +84,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
 
   add_foreign_key "events", "categories"
   add_foreign_key "events", "users"
-
   add_foreign_key "favorites", "events"
   add_foreign_key "favorites", "users"
-
   add_foreign_key "registrations", "events"
   add_foreign_key "registrations", "users"
   add_foreign_key "user_categories", "categories"
