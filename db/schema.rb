@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
+=======
+ActiveRecord::Schema[7.1].define(version: 2023_11_27_154210) do
+>>>>>>> b64ad2c6b938d46c69b1448d1984b97fd79dc52a
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +22,14 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_chatrooms_on_event_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -43,6 +55,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_favorites_on_event_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "registrations", force: :cascade do |t|
@@ -82,10 +104,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_153228) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chatrooms", "events"
   add_foreign_key "events", "categories"
   add_foreign_key "events", "users"
   add_foreign_key "favorites", "events"
   add_foreign_key "favorites", "users"
+<<<<<<< HEAD
+=======
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
+>>>>>>> b64ad2c6b938d46c69b1448d1984b97fd79dc52a
   add_foreign_key "registrations", "events"
   add_foreign_key "registrations", "users"
   add_foreign_key "user_categories", "categories"
