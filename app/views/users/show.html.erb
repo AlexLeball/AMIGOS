@@ -1,0 +1,13 @@
+<h1>Il tuo profilo</h1>
+
+<% if @editable %>
+  <%= render 'edit_form' %> <!-- Visualizza il modulo di modifica -->
+<% else %>
+  <p><strong>first_name:</strong> <%= @user.first_name %></p>
+  <p><strong>last_name:</strong> <%= @user.last_name %></p>
+  <p><strong>birth_date:</strong> <%= @user.birth_date %></p>
+  <p><strong>city:</strong> <%= @user.city %></p>
+  <p><strong>description:</strong> <%= @user.description %></p>
+
+  <%= link_to 'edit informations', my_profile_path(edit: true) %> <!-- go to _edit_form -->
+<% end %>
