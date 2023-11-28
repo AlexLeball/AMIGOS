@@ -1,0 +1,12 @@
+<!-- app/views/favorites/index.html.erb -->
+<h1>All Favorite Events</h1>
+
+<% @favorite_events.each do |favorite| %>
+  <div class="favorite-event">
+    <h2><%= link_to favorite.event.title, event_path(favorite.event) %></h2>
+    <p><strong>Event date:</strong> <%= favorite.event.event_date %></p>
+    <p><strong>City:</strong> <%= favorite.event.city %></p>
+    <p><strong>Info:</strong> <%= favorite.event.short_description %></p>
+    <p><strong>Limit participants:</strong> <%= favorite.event.limit_participants %></p>
+  </div>
+<% end %>

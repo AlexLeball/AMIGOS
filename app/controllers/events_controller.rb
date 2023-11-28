@@ -3,6 +3,12 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @categories = Category.all
+  end
+
+  def categories
+    @categories = Category.all
+    render json: @categories.pluck(:name)
   end
 
   def show
