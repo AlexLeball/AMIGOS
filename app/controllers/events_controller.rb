@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
+    @event = Event.find(params[:event_id])
   end
 
   def edit
@@ -62,6 +62,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :address, :city, :short_description, :long_description, :event_date, :limit_participants, :category_id)
+    params.require(:event).permit(:event_id, :title, :address, :city, :short_description, :long_description, :event_date, :limit_participants, :category_id)
   end
 end
