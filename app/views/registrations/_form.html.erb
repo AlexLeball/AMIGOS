@@ -1,0 +1,4 @@
+<%= simple_form_for [@event, @registration] do |f| %>
+  <%= f.input :introduction, as: :text, input_html: { data: { } } %>
+  <%= f.button :submit %>
+<% end %>
