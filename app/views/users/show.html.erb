@@ -1,7 +1,7 @@
-<h1>Il tuo profilo</h1>
+<h1>Your profile</h1>
 
 <% if @editable %>
-  <%= render 'edit_form' %> <!-- Visualizza il modulo di modifica -->
+  <%= render 'edit_form' %>
 <% else %>
   <p><strong>first_name:</strong> <%= @user.first_name %></p>
   <p><strong>last_name:</strong> <%= @user.last_name %></p>

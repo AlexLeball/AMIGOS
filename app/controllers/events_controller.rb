@@ -13,6 +13,34 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    if current_user != @event.user
+      redirect_to @event, alert: "You can't edit this event"
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    if current_user == @event.user
+      @event.destroy
+      redirect_to events_path, notice: "Event deleted successfully."
+    end
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if current_user == @event.user
+      if @event.update(event_params)
+        redirect_to @event, notice: "Event updated successfully."
+      else
+        render 'edit'
+      end
+    else
+      redirect_to @event, alert: "You can't edit this event because you are not the owner of the event."
+    end
+  end
+
   def create
     @event = Event.new(event_params)
     # inizialize the user_id with the current_user.id
