@@ -6,7 +6,14 @@ Rails.application.routes.draw do
   get 'edit_my_profile', to: 'users#edit' # change the path for the user profile
   patch 'update_my_profile', to: 'users#update' # change the path for the user profile
   resources :users, only: [:new, :create]
-  resources :events, only: [:index, :show, :new, :create]
+  resources :events, only: [:index, :show, :new, :create] do
+    resources :registrations, only: [:index, :show, :new, :create]
+      member do
+        post 'accept'
+        post 'decline'
+      end
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
