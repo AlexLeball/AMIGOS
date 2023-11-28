@@ -1,5 +1,4 @@
 <h1>All the events</h1>
-
 <% @events.each do |event| %>
   <div class="event">
     <h2><%= link_to event.title, event_path(event) %></h2>
@@ -8,14 +7,15 @@
     <p><strong>Info:</strong> <%= event.short_description %></p>
     <p><strong>Limit participants:</strong> <%= event.limit_participants %></p>
 
-    <% if current_user.favorites.include?(event) %>
-      <%= link_to 'Remove from Favorites', event_favorite_path(event), data: { turbo_method: :delete } %>
-    <% else %>
-      <%= link_to 'Add to Favorites', event_favorites_path(event), data: { turbo_method: :post } %>
+    <% if user_signed_in? %>
+      <% if current_user.favorites.include?(event) %>
+        <%= link_to 'Remove from Favorites', event_favorite_path(event), data: { turbo_method: :delete } %>
+      <% else %>
+        <%= link_to 'Add to Favorites', event_favorites_path(event), data: { turbo_method: :post } %>
+      <% end %>
     <% end %>
   </div>
 <% end %>
-
 
 <h1>Categories</h1>
 <div id="categories">
