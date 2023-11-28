@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @editable = params[:edit].present? # Controlla se si tratta di una richiesta di modifica
+    @editable = params[:edit].present?
   end
 
   def update
@@ -11,15 +11,19 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to my_profile_path, notice: "Impostazioni aggiornate con successo"
     else
-      @editable = true # Mantieni la modalità di modifica in caso di errori nella validazione
+      @editable = true
       render 'show'
     end
+  end
+
+  def favorite_events
+    @user = current_user
+    @favorite_events = @user.favorite_events
   end
 
   private
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :birth_date, :city, :description)
-    # Aggiungi altri campi che desideri permettere all'utente di aggiornare
   end
 end

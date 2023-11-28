@@ -3,9 +3,26 @@
 <% @events.each do |event| %>
   <div class="event">
     <h2><%= link_to event.title, event_path(event) %></h2>
-    <p><strong>event date:</strong> <%= event.event_date %></p>
-    <p><strong>city:</strong> <%= event.city %></p>
-    <p><strong>info:</strong> <%= event.short_description %></p>
-    <p><strong>limit participants:</strong></p> <%= event.limit_participants %></p>
+    <p><strong>Event date:</strong> <%= event.event_date %></p>
+    <p><strong>City:</strong> <%= event.city %></p>
+    <p><strong>Info:</strong> <%= event.short_description %></p>
+    <p><strong>Limit participants:</strong> <%= event.limit_participants %></p>
+
+    <% if current_user.favorites.include?(event) %>
+      <%= link_to 'Remove from Favorites', event_favorite_path(event), data: { turbo_method: :delete } %>
+    <% else %>
+      <%= link_to 'Add to Favorites', event_favorites_path(event), data: { turbo_method: :post } %>
+    <% end %>
   </div>
 <% end %>
+
+
+<h1>Categories</h1>
+<div id="categories">
+  <!-- Area per visualizzare le categorie -->
+  <ul>
+    <% @categories.each do |category| %>
+      <li><%= category.name %></li>
+    <% end %>
+  </ul>
+</div>
