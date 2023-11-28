@@ -5,9 +5,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-User.destroy_all
 Event.destroy_all
 Category.destroy_all
+User.destroy_all
 
 puts 'Creating users...'
 user1 = User.create!(
@@ -105,7 +105,6 @@ category9 = Category.create!(
 
 puts 'Creating events...'
 
-
 Event.create!(
   title: 'Concert',
   short_description: 'A concert',
@@ -114,8 +113,8 @@ Event.create!(
   city: 'Nantes',
   event_date: '2021-01-01',
   limit_participants: 10,
-  user_id: user1,
-  category_id: category1,
+  user: user1,
+  category: category1,
 )
 
 Event.create!(
@@ -126,8 +125,8 @@ Event.create!(
   city: 'Paris',
   event_date: '2025-01-01',
   limit_participants: 1,
-  user_id: user2,
-  category_id: category2
+  user: user2,
+  category: category2
 )
 
 Event.create!(
@@ -138,8 +137,8 @@ Event.create!(
   city: 'Amsterdam',
   event_date: '2028-01-01',
   limit_participants: 100,
-  user_id: user3,
-  category_id: category7
+  user: user3,
+  category: category7
 )
 
 Event.create!(
@@ -150,8 +149,8 @@ Event.create!(
   city: 'Nantes',
   event_date: '2021-01-01',
   limit_participants: 19,
-  user_id: user1,
-  category_id: category4
+  user: user1,
+  category: category4
 )
 
 Event.create!(
@@ -162,8 +161,8 @@ Event.create!(
   city: 'Le Mans',
   event_date: '2023-12-01',
   limit_participants: 10,
-  user_id: user5,
-  category_id: category1
+  user: user5,
+  category: category1
 )
 
 Event.create!(
@@ -174,8 +173,8 @@ Event.create!(
   city: 'Nantes',
   event_date: '2021-01-01',
   limit_participants: 30,
-  user_id: user1,
-  category_id: category8
+  user: user1,
+  category: category8
 )
 
 Event.create!(
@@ -186,8 +185,8 @@ Event.create!(
   city: 'Nantes',
   event_date: '2024-01-01',
   limit_participants: 90,
-  user_id: user3,
-  category_id: category8
+  user: user3,
+  category: category8
 )
 
 Event.create!(
@@ -198,6 +197,6 @@ Event.create!(
   city: 'Paris',
   event_date: '2024-01-01',
   limit_participants: 78,
-  user_id: user4,
-  category_id: category9
+  user: user4,
+  category: category9
 )
