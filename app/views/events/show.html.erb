@@ -4,10 +4,17 @@
   <p><strong>Address:</strong> <%= @event.address %></p>
   <p><strong>City:</strong> <%= @event.city %></p>
   <p><strong>Event Date:</strong> <%= @event.event_date %></p>
-  <p><strong>Info:</strong> <%= @event.long_description_description %></p>
+  <p><strong>Info:</strong> <%= @event.long_description %></p>
   <p><strong>Limit:</strong> <%= @event.limit_participants %></p>
   <p><strong>Category:</strong> <%= @event.category.name %></p>
 </div>
 
-<%= link_to 'edit', edit_event_path(@event) %> |
+<% if current_user == @event.user %>
+  <%= link_to 'delete', event_path(@event), data: { turbo_method: :delete } %>
+<% end %>
+
+<% if current_user == @event.user %>
+  <%= link_to 'edit', edit_event_path(@event) %>
+<% end %>
+
 <%= link_to 'back to events', events_path %>
