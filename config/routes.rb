@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'edit_my_profile', to: 'users#edit'
   patch 'update_my_profile', to: 'users#update'
 
+  resources :categories, only: [:index, :show]
   resources :users
   resources :favorites, only: [:index]
   resources :events do
