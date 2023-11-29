@@ -30,8 +30,7 @@ class RegistrationsController < ApplicationController
   #     redirect_to event_path(@registration.event)
   #   else
   #
-  #   end
-  end
+
 
 private
 
