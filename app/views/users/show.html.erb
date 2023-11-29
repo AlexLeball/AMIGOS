@@ -18,12 +18,12 @@
       <br>
       <%@registrations.each do |registration|  %>
         <%= "#{registration.status}"  %>
+      <%= link_to 'Accept', accept_event_registration_path(event, registration), data: { turbo_method: :patch } %>
       <% end %>
       <br>
     <% end %>
     <%= "#{event.title}"%>
     <br>
-   <%= link_to 'Accept', accept_event_registration_path(@your_own_events), data: { turbo_method: :post } %>
   </div>
   <br>
 <% end %>
