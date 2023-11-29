@@ -10,12 +10,23 @@
   <p><strong>description:</strong> <%= @user.description %></p>
   <%= link_to 'edit', my_profile_path(edit: true) %> <!-- go to _edit_form -->
 <% end %>
-
+<div>
+<h1>Your own events:</h1>
 <% @your_own_events.each do |event| %>
-<%= "#{event.name}" %>
-<%= "#{event.status}" %>
+  <div>
+    <% unless event.registrations.empty? %>
+      <br>
+      <%@registrations.each do |registration|  %>
+        <%= "#{registration.status}"  %>
+      <% end %>
+      <br>
+    <% end %>
+    <%= "#{event.title}"%>
+    <br>
+   <%= link_to 'Accept', accept_event_registration_path(@your_own_events), data: { turbo_method: :post } %>
+  </div>
+  <br>
 <% end %>
 
-<br>
 <%= link_to 'View Favorites', favorites_path %>
 <%= link_to 'Events', event_registrations_path(@registrations) %>

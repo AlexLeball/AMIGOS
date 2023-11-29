@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @user = current_user
     @editable = params[:edit].present?
     @registrations = @user.registrations
+    @your_own_events = Event.where(user: current_user)
   end
 
   def update
@@ -24,15 +25,13 @@ class UsersController < ApplicationController
 
   def your_own_events
     @user = current_user
-    @registrations = current_user.reservations
-    @your_events = Registration.where(user: current_user)
-    @registration_to_confirm = Registration.where(event: @your_events)
-    render 'show'
+    @user_events = Event.registrations.where(user: current_user)
+    @registration_to_confirm = Event.registrations.where(user: current_user)
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :birth_date, :city, :description)
+    params.require(:user).permit(:first_name, :last_name, :birth_date, :city, :description, :events)
   end
 end
