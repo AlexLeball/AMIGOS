@@ -1,21 +1,19 @@
 <div data-controller="view-switcher">
-  <!-- Pulsante per passare alla vista delle categorie -->
-  <button data-action="click->view-switcher#toggleView" data-target="view-switcher.categories" hidden>
-    Switch to Categories
+  <button data-action="click->view-switcher#toggleView" data-target="view-switcher.events">
+    Events
   </button>
 
-  <!-- Pulsante per passare alla vista degli eventi -->
-  <button data-action="click->view-switcher#toggleView" data-target="view-switcher.events">
-    Switch to Events
+    <button data-action="click->view-switcher#toggleView" data-target="view-switcher.categories">
+    Categories
   </button>
 
   <div data-view-switcher-target="events">
-    <!-- Visualizzazione della vista degli eventi -->
+    <!-- event view -->
     <%= render partial: 'events_list', locals: { events: @events } %>
   </div>
 
   <div data-view-switcher-target="categories" hidden>
-    <!-- Visualizzazione della vista delle categorie -->
+    <!-- catory view -->
     <%= render partial: 'categories_list', locals: { categories: @categories } %>
   </div>
 </div>
