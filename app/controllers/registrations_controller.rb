@@ -2,6 +2,7 @@ class RegistrationsController < ApplicationController
 
   def new
     @registration = Registration.new
+    @event = Event.find(params[:event_id])
   end
 
   def create
