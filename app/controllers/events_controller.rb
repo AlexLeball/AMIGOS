@@ -16,7 +16,19 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.find(params[:event_id])
+    @event = Event.new
+  end
+
+  def create
+    @event = Event.new(event_params)
+    # inizialize the user_id with the current_user.id
+    @event.user_id = current_user.id if current_user
+
+    if @event.save
+      redirect_to @event, notice: "Event created successfully."
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -47,17 +59,6 @@ class EventsController < ApplicationController
     end
   end
 
-  def create
-    @event = Event.new(event_params)
-    # inizialize the user_id with the current_user.id
-    @event.user_id = current_user.id if current_user
-
-    if @event.save
-      redirect_to @event, notice: "Event created successfully."
-    else
-      render 'new'
-    end
-  end
 
   private
 
