@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+.container-home {
+  height: 100%;
+  width: 100%;
+}
+
+.container-home-top {
+  // background-image: url("../../media/examples/lizard.png");
+  // background-image: url("../../images/background-home.png");
+  background-image: url(background-home.png);
+
+  background-size: cover;
+  height: 50%;
+}
+
+.container-home-bottom {
+  background-color: white;
+  height: 50%;
+  padding: 100px 40px;
+}

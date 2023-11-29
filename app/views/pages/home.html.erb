@@ -1,4 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p>🧓👴</p>
-<%= link_to 'Events list', events_path %>
+<p class="big-title">Faites vous des amis à <span>tout âge</span></p>
+
+<div class="container-home">
+  <div class="container-home-top">
+    <%= link_to "Connexion", user_session_path, class: "a-style connexion-btn" %>
+  </div>
+  <div class="container-home-bottom">
+    <p>Amigos vous connecte à tous les événements autour de chez vous en quelques clics.</p>
+    <%= link_to "S'inscrire", new_user_registration_path, class: "button-primary a-style" %>
+  </div>
+</div>
