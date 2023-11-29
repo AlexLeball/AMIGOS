@@ -15,8 +15,8 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
     resources :registrations, only: [:index, :show, :new, :create] do
       member do
-        post 'accept'
-        post 'reject'
+        patch 'accept'
+        patch 'reject'
       end
     end
   end
