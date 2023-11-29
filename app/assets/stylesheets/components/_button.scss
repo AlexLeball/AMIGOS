@@ -1,0 +1,28 @@
+.a-style {
+  text-align: left;
+  text-decoration: none;
+  color: white;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.connexion-btn {
+  position: relative;
+  margin-left: 40px;
+  top: 40px;
+}
+
+.button-primary {
+  display: block;
+  border-radius: 10px;
+  background-color: $amigos-green-primary;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.40);
+  height: 60px;
+  padding-left: 20px;
+  padding-top: 19px;
+  height: 60px;
+  position: relative;
+  bottom: -40px;
+}
