@@ -22,7 +22,13 @@ class UsersController < ApplicationController
     @favorite_events = @user.favorite_events
   end
 
-
+  def your_own_events
+    @user = current_user
+    @registrations = current_user.reservations
+    @your_events = Registration.where(user: current_user)
+    @registration_to_confirm = Registration.where(event: @your_events)
+    render 'show'
+  end
 
   private
 

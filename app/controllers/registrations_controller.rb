@@ -23,13 +23,19 @@ class RegistrationsController < ApplicationController
     @registrations = current_user.registrations
   end
 
-  # def accept
-  #   @registration = Registration.find(params[:id])
-  #   @registration.status = "accepted"
-  #   if @registration.save
-  #     redirect_to event_path(@registration.event)
-  #   else
-  #
+  def accept
+    @registration = Registration.find(params[:id])
+   if registration.accept
+      redirect_to event_path(@registration.event)
+   end
+  end
+
+  def reject
+    @registration = Registration.find(params[:id])
+    if @registration.reject
+      redirect_to event_path(@registration.event)
+    end
+  end
 
 
 private
@@ -41,4 +47,5 @@ private
   def registration_params
     params.require(:registration).permit(:event_id, :status, :user, :event, :introduction)
   end
+
 end
