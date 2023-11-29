@@ -1,5 +1,11 @@
-<li>
 <% @registrations.each do |registration| %>
+<li>
   <%= "#{registration.event.title}" %>
-<% end %>
+  <br>
+  <%= "#{registration.event.event_date}" %>
+  <br>
+  <%= "#{registration.event.short_description}" %>
+  <br>
+  <%= "#{registration.status}" || 'Pending' %>
 </li>
+<% end %>

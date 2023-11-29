@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :registrations, only: [:index, :show, :new, :create] do
       member do
         post 'accept'
-        post 'decline'
+        post 'reject'
       end
     end
   end

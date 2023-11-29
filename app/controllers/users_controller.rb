@@ -22,6 +22,8 @@ class UsersController < ApplicationController
     @favorite_events = @user.favorite_events
   end
 
+
+
   private
 
   def user_params

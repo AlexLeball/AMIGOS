@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+  # before_action :set_registration
 
   def new
     @registration = Registration.new
@@ -10,6 +11,7 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new(registration_params)
     @registration.user = current_user
     @registration.event = Event.find(params[:event_id])
+    @registration.status = "pending"
     if @registration.save
       redirect_to events_path
     else
@@ -23,20 +25,18 @@ class RegistrationsController < ApplicationController
 
   # def accept
   #   @registration = Registration.find(params[:id])
-  #   if @registration.accept
-  #     redirect_to my_profile_path(@user)
-  #   end
-  # end
+  #   @registration.status = "accepted"
+  #   if @registration.save
+  #     redirect_to event_path(@registration.event)
+  #   else
+  #
 
-  # def reject
-  #   @registration = Registration.find(params[:id])
-  #   if @registration.reject
-  #     redirect_to my_profile_path(@user)
-  #   end
-  # end
 
 private
 
+  def set_registration
+    @registration = Registration.find(params[:id])
+  end
 
   def registration_params
     params.require(:registration).permit(:event_id, :status, :user, :event, :introduction)
