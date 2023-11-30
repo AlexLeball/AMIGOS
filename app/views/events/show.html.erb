@@ -1,5 +1,12 @@
 <%= render "shared/navbar" %>
 
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet">
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <h1><%= @event.title %></h1>
 
 <div>
@@ -18,6 +25,7 @@
 <% if current_user == @event.user %>
   <%= link_to 'edit', edit_event_path(@event) %>
 <% end %>
+
 
 <%= link_to 'back to events', events_path %>
 <br>
