@@ -8,6 +8,10 @@
   line-height: normal;
 }
 
+input.btn {
+
+}
+
 .connexion-btn {
   position: relative;
   margin-left: 40px;
@@ -25,4 +29,27 @@
   height: 60px;
   position: relative;
   bottom: -40px;
+}
+
+.button-primary-submit {
+  display: block;
+  border-radius: 10px;
+  background-color: $amigos-green-primary;
+  height: 60px;
+  padding-left: 20px;
+  padding-top: 14px;
+  height: 60px;
+  position: relative;
+  bottom: -40px;
+  margin-bottom: 40px;
+
+  .btn {
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: normal;
+  }
 }
