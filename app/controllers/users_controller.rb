@@ -17,16 +17,20 @@ class UsersController < ApplicationController
       render 'show'
     end
   end
+
   def favorite_events
     @user = current_user
     @favorite_events = @user.favorite_events
   end
+
   def your_own_events
     @user = current_user
     @user_events = Event.registrations.where(user: current_user)
     @registration_to_confirm = Event.registrations.where(user: current_user)
   end
+
   private
+
   def user_params
     params.require(:user).permit(:first_name, :last_name, :birth_date, :city, :description, :events)
   end
