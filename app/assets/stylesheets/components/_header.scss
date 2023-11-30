@@ -1,12 +1,23 @@
 .header {
-  height: 86px;
+  height: 171px;
   width: 100%;
-  background-image: url("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701338126/qw3yuatse3mrbdwukgvc.png");
+  background-image: url("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701360427/header-bg_e7zvxr.png");
 }
 
 .profile-header {
-  height: 40px;
+  display: inline-flex;
+  height: 36px;
   justify-content: center;
-  text-align: left;
-  margin: 40px;
+  margin-left: 40px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profile-firstname {
+  color: white;
+  font-family: Raleway;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
 }

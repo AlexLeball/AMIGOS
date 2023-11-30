@@ -1,19 +1,42 @@
 <% @events.each do |event| %>
+  <div class="event-container">
   <div class="event">
-    <p><strong>Event date:</strong> <%= event.event_date %></p>
-    <p><%= event.category.name%></p>
-    <% if user_signed_in? %>
-      <% favorite = current_user.favorites.find_by(event: event) %>
-      <% if favorite %>
-        <%= link_to 'Remove from Favorites', event_favorite_path(event, favorite), method: :delete, data: { turbo_method: :delete } %>
-      <% else %>
-        <%= link_to 'Add to Favorites', event_favorites_path(event), method: :post, data: { turbo_method: :post } %>
-      <% end %>
+    <div class="top-card">
+      <div class="calendar">
+        <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356565/card-calendar_bmkf1v.svg" alt="">
+        <p class="small-infos"><%= event.event_date %></p>
+      </div>
+
+        <% if user_signed_in? %>
+          <% favorite = current_user.favorites.find_by(event: event) %>
+          <% if favorite %>
+            <%= link_to 'Remove from Favorites', event_favorite_path(event, favorite), method: :delete, data: { turbo_method: :delete } %>
+          <% else %>
+            <%= link_to 'Add to Favorites', event_favorites_path(event), method: :post, data: { turbo_method: :post } %>
+          <% end %>
+        <% end %>
+    </div>
+
+    <%= link_to event_path(event), class: "card-click" do %>
+      <p class="card-category"><%= event.category.name.upcase%></p>
+      <h2 class="card-title"><%= event.title %></h2>
+      <p class="description"><%= event.short_description %></p>
+
+      <div class="bottom-card">
+        <div class="map">
+          <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356564/card-pin_olzpve.svg" alt="">
+          <p class="small-infos"><%= event.city %></p>
+        </div>
+
+        <div class="participants">
+          <p class="small-infos">Places restantes : <strong><%= event.limit_participants %></strong></p>
+          <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356749/card-participants_n7yaje.svg" alt="">
+        </div>
+
+      </div>
     <% end %>
-    <h2><%= link_to event.title, event_path(event) %></h2>
-    <p><strong>Ville:</strong> <%= event.city %></p>
-    <p><%= event.short_description %></p>
-    <p><strong>Places Restantes:</strong> <%= event.limit_participants %></p>
+  </div>
+    <div class="bottom-line"></div>
   </div>
 <% end %>
 
