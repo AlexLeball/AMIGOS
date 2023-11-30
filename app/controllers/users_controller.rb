@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @editable = params[:edit].present?
     @registrations = @user.registrations
     @your_own_events = Event.where(user: current_user)
+    @favorite_events = @user.favorite_events
   end
 
   def update

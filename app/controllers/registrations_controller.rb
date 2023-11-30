@@ -24,17 +24,13 @@ class RegistrationsController < ApplicationController
   end
 
   def accept
-    @registration = Registration.find(params[:id])
-    if @registration.accept
-      redirect_to event_path(@event)
-    end
+    Registration.update(status: "accepted")
+    redirect_to events_path(@event)
   end
 
   def reject
-    @registration = Registration.find(params[:id])
-    if @registration.reject
-      redirect_to event_path(@event)
-    end
+    Registration.update(status: "rejected")
+    redirect_to events_path(@event)
   end
 
 private
