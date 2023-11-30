@@ -3,6 +3,11 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["eventsButton", "categoriesButton", "events", "categories"];
 
+  initialize() {
+    // Disabilita il pulsante "Evenement" all'avvio della pagina
+    this.eventsButtonTarget.setAttribute("disabled", "true");
+  }
+
   toggleView(event) {
     const clickedButton = event.currentTarget;
 
@@ -19,3 +24,4 @@ export default class extends Controller {
     }
   }
 }
+
