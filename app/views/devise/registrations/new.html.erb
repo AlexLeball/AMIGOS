@@ -47,8 +47,11 @@
                   label: "Image de profil" %>
 
       <%= f.input :user_categories,
-                  as: :check_boxes,
-                  collection: [['Sport','Sport'], ['Rencontre','Rencontre']] %>
+           as: :check_boxes,
+           collection: Category.all.map { |category| [category.name, category.id] },
+           label: 'Choisissez au moins trois catégories',
+           input_html: { class: "tag-selector" },
+           item_wrapper_class: 'tag-item' %>
 
     </div>
 
