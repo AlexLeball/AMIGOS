@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @your_own_events = Event.where(user: current_user)
     @favorite_events = @user.favorite_events
   end
+
   def update
     @user = current_user
     if @user.update(user_params)

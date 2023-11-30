@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-  # before_action :set_registration
+  before_action :set_registration
 
   def new
     @registration = Registration.new
