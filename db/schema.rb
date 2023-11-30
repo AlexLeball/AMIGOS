@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_160930) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_30_134346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -107,7 +107,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_160930) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_categories_id", null: false
     t.index ["category_id"], name: "index_user_categories_on_category_id"
+    t.index ["user_categories_id"], name: "index_user_categories_on_user_categories_id"
     t.index ["user_id"], name: "index_user_categories_on_user_id"
   end
 
@@ -141,5 +143,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_160930) do
   add_foreign_key "registrations", "events"
   add_foreign_key "registrations", "users"
   add_foreign_key "user_categories", "categories"
+  add_foreign_key "user_categories", "user_categories", column: "user_categories_id"
   add_foreign_key "user_categories", "users"
 end

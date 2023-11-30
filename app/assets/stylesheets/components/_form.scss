@@ -1,0 +1,25 @@
+.form-container {
+  width: 100%;
+  padding: 20px 40px 40px 40px;
+}
+
+.form-label {
+  color: #000;
+  font-family: Raleway;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 0px;
+  margin-left: 16px;
+}
+
+.form-control {
+  background-color: $amigos-grey-light;
+  border-style: none;
+  height: 40px;
+  padding: 0.35rem 1rem;
+}
+
+.form-select {
+  border-style: none;
+}

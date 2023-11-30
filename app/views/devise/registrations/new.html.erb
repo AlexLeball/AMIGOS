@@ -1,36 +1,59 @@
+<div class="header-back">
+  <%= link_to root_path do %>
+    <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
+    <p>retour</p>
+  <% end %>
+
+</div>
+
 <h1 class="page-title">Créez votre compte</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="form-container">
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :last_name,
-                label: 'Nom',
-                error: 'Merci de préciser votre nom de famille' %>
-    <%= f.input :first_name,
-                label: 'Prénom',
-                error: 'Merci de préciser votre prénom' %>
-    <%= f.input :email,
-                label: 'Email',
-                error: 'Merci de préciser votre email',
-                placeholder: 'user@domain.com',
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                label: 'Mot de passe',
-                required: true,
-                error: 'Merci de mettre un mot de passe',
-                hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :last_name,
+                  label: 'Nom',
+                  error: 'Merci de préciser votre nom de famille' %>
+      <%= f.input :first_name,
+                  label: 'Prénom',
+                  error: 'Merci de préciser votre prénom' %>
+      <%= f.input :email,
+                  label: 'Email',
+                  error: 'Merci de préciser votre email',
+                  placeholder: 'user@domain.com',
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+      <%= f.input :password,
+                  label: 'Mot de passe',
+                  required: true,
+                  error: 'Merci de mettre un mot de passe',
+                  hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :birth_date,
+                  required: true,
+                  label: 'Date de naissance',
+                  as: :date %>
+      <%= f.input :city,
+                  required: true,
+                  as: :search %>
+      <%= f.input :photo,
+                  required: true,
+                  label: "Image de profil" %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Créer le compte" %>
-  </div>
-<% end %>
+      <%= f.input :user_categories,
+                  as: :check_boxes,
+                  collection: [['Sport','Sport'], ['Rencontre','Rencontre']] %>
 
-<%= render "devise/shared/links" %>
+    </div>
+
+    <div class="form-actions button-primary-submit">
+      <%= f.button :submit, "Créer le compte" %>
+    </div>
+  <% end %>
+</div>
