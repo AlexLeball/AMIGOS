@@ -1,0 +1,119 @@
+.event-container {
+  width: 100%;
+}
+
+.event {
+  padding: 40px;
+}
+
+.card-title {
+  color: #000;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.description {
+  color: $amigos-grey-medium;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.small-infos {
+  color: #000;
+  font-family: Raleway;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+  margin-bottom: 0;
+}
+
+.card-click {
+  text-decoration: none;
+  display: contents;
+}
+
+.card-category {
+  color: $amigos-grey-medium;
+  font-family: Raleway;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 28px;
+  margin: 0;
+}
+
+.top-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-line {
+  height: 1px;
+  width: 100%;
+  background-color: $amigos-grey-light;
+}
+
+.calendar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.participants {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  img {
+    margin-left: 5px;
+  }
+}
+
+.participants img {
+  color: $amigos-green-primary;
+}
+
+.map {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.category-card {
+  position: absolute;
+  top: 80px;
+  display: flex;
+
+  button {
+    color: white;
+    background-color: transparent;
+    border: none;
+  }
+
+  button:disabled {
+    color: $amigos-green-primary-pale;
+    background-color: transparent;
+    border: none;
+  }
+}
