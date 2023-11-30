@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
 
-  # get 'my_profile', to: 'users#show'
-  # get 'edit_my_profile', to: 'users#edit'
-  # patch 'update_my_profile', to: 'users#update'
+  get 'my_profile', to: 'users#show'
+  get 'edit_my_profile', to: 'users#edit'
+  patch 'update_my_profile', to: 'users#update'
 
   resources :categories, only: [:index, :show]
   resources :users

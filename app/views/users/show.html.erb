@@ -1,25 +1,7 @@
 <div>
 <h1>Vos informations</h1>
   <div>
-  <form action="/submit" method="post">
-    <label for="Nom de famille">Nom de famille:</label>
-    <br>
-    <input type="text" id="last_name" name="last_name" required>
-    <br>
-    <label for="Prénom">Prénom:</label>
-    <br>
-    <input type="text" id="first_name" name="first_name" required>
-    <br>
-    <label for="Ville">Ville:</label>
-    <br>
-    <input type="text" id="city" name="city" required>
-    <br>
-    <label for="photo">Photo profil:</label>
-    <br>
-    <input type="file" id="photo" name="photo" accept="image/*">
-    <br>
-    <button type="submit">Mettre à jour</button>
-  </form>
+    <%= render "users/form", user: @user, event: @event %>
   </div>
 <br>
   <div>
@@ -49,7 +31,7 @@
   <h3>Vos favoris</h3>
   <% @favorite_events.each do |favorite| %>
     <div>
-      <p><strong><%= link_to favorite.title, event_path(favorite) %></strong> </p>
+      <p><strong><%= link_to favorite.title, event_path(favorite)%></strong></p>
       <p>Prochaine session: <%= favorite.event_date %></p>
     </div>
   <% end %>
