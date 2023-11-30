@@ -9,9 +9,13 @@ class RegistrationsController < ApplicationController
     @event = Event.find(params[:event_id])
     @registration = Registration.new(registration_params)
     @registration.user = current_user
-    @registration.event = Event.find(params[:event_id])
+    @registration.event = @event
     @registration.status = "en attente"
+
     if @registration.save
+      # decrement the limit_participants by 1
+      @event.decrement!(:limit_participants) if @event.limit_participants.present?
+
       redirect_to events_path
     else
       render :new
