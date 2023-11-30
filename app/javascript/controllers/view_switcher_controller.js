@@ -1,11 +1,21 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="view-switcher"
 export default class extends Controller {
-  static targets = ["events", "categories"];
+  static targets = ["eventsButton", "categoriesButton", "events", "categories"];
 
-  toggleView() {
-    this.eventsTarget.toggleAttribute("hidden");
-    this.categoriesTarget.toggleAttribute("hidden");
+  toggleView(event) {
+    const clickedButton = event.currentTarget;
+
+    if (clickedButton === this.eventsButtonTarget) {
+      this.eventsTarget.toggleAttribute("hidden");
+      this.categoriesTarget.toggleAttribute("hidden");
+      this.categoriesButtonTarget.removeAttribute("disabled");
+      this.eventsButtonTarget.setAttribute("disabled", "true");
+    } else if (clickedButton === this.categoriesButtonTarget) {
+      this.categoriesTarget.toggleAttribute("hidden");
+      this.eventsTarget.toggleAttribute("hidden");
+      this.eventsButtonTarget.removeAttribute("disabled");
+      this.categoriesButtonTarget.setAttribute("disabled", "true");
+    }
   }
 }

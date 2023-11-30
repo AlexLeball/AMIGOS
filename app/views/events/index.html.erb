@@ -1,10 +1,10 @@
 <div data-controller="view-switcher">
-  <button data-action="click->view-switcher#toggleView" data-target="view-switcher.events">
-    Events
+  <button data-action="click->view-switcher#toggleView" data-target="view-switcher.eventsButton" data-disable-with="Events">
+    Événements
   </button>
 
-    <button data-action="click->view-switcher#toggleView" data-target="view-switcher.categories">
-    Categories
+  <button data-action="click->view-switcher#toggleView" data-target="view-switcher.categoriesButton" data-disable-with="Categories">
+    Catégories
   </button>
 
   <div data-view-switcher-target="events">
@@ -13,7 +13,7 @@
   </div>
 
   <div data-view-switcher-target="categories" hidden>
-    <!-- catory view -->
+    <!-- category view -->
     <%= render partial: 'categories_list', locals: { categories: @categories } %>
   </div>
 </div>
