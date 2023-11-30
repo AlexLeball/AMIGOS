@@ -11,7 +11,7 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new(registration_params)
     @registration.user = current_user
     @registration.event = Event.find(params[:event_id])
-    @registration.status = "pending"
+    @registration.status = "en attente"
     if @registration.save
       redirect_to events_path
     else
@@ -24,12 +24,12 @@ class RegistrationsController < ApplicationController
   end
 
   def accept
-    Registration.update(status: "accepted")
+    Registration.update(status: "acceptée")
     redirect_to events_path(@event)
   end
 
   def reject
-    Registration.update(status: "rejected")
+    Registration.update(status: "rejetée")
     redirect_to events_path(@event)
   end
 

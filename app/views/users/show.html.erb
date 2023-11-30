@@ -1,8 +1,7 @@
-<div class= "container">
+<div>
 <h1>Vos informations</h1>
-  <div class= "container">
+  <div>
   <form action="/submit" method="post">
-
     <label for="Nom de famille">Nom de famille:</label>
     <br>
     <input type="text" id="last_name" name="last_name" required>
@@ -22,8 +21,8 @@
     <button type="submit">Mettre à jour</button>
   </form>
   </div>
-
-  <div class= "container">
+<br>
+  <div>
   <h1>Vos événments à valider:</h1>
   <% @your_own_events.each do |event| %>
     <div>
@@ -36,8 +35,8 @@
           <br>
           <%= "La demande est #{registration.status}" %>
           <br>
-          <%= link_to 'Acceptée', accept_event_registration_path(event, registration), data: { turbo_method: :patch } %>
-          <%= link_to 'Rejetée', reject_event_registration_path(event, registration), data: { turbo_method: :patch } %>
+          <%= link_to 'Accept', accept_event_registration_path(event, registration), data: { turbo_method: :patch }%>
+          <%= link_to 'Rejet', reject_event_registration_path(event, registration), data: { turbo_method: :patch } %>
         <% end %>
         <br>
       <% end %>
@@ -46,16 +45,12 @@
     <br>
   <% end %>
   </div>
-
-  <div class= "container">
+  <div>
   <h3>Vos favoris</h3>
   <% @favorite_events.each do |favorite| %>
-    <div class="favorite-event">
-      <h2><%= link_to favorite.event.title, event_path(favorite.event) %></h2>
-      <p><strong>Event date:</strong> <%= favorite.event.event_date %></p>
-      <p><strong>City:</strong> <%= favorite.event.city %></p>
-      <p><strong>Info:</strong> <%= favorite.event.short_description %></p>
-      <p><strong>Limit participants:</strong> <%= favorite.event.limit_participants %></p>
+    <div>
+      <p><strong><%= link_to favorite.title, event_path(favorite) %></strong> </p>
+      <p>Prochaine session: <%= favorite.event_date %></p>
     </div>
   <% end %>
   </div>
