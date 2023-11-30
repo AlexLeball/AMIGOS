@@ -4,6 +4,12 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @categories = Category.all
+    @markers = @events.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def categories
@@ -13,6 +19,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @markers = Event.geocoded.map
   end
 
   def new
