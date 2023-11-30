@@ -1,5 +1,4 @@
 class RegistrationsController < ApplicationController
-  before_action :set_registration
 
   def new
     @registration = Registration.new
@@ -34,10 +33,6 @@ class RegistrationsController < ApplicationController
   end
 
 private
-
-  def set_registration
-    @registration = Registration.find(params[:id])
-  end
 
   def registration_params
     params.require(:registration).permit(:event_id, :status, :user, :event, :introduction)
