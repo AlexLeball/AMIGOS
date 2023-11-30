@@ -37,6 +37,6 @@
   <% end %>
   </div>
 
-  <%= link_to 'Evénements', event_registrations_path(@registrations) %>
-  <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>
+  <%= link_to 'Vos événements', event_registrations_path(@registrations) %>
+  <%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete } %>
 </div>
