@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "events#index"
+  root to: "pages#home"
 
   get 'my_profile', to: 'users#show'
   get 'edit_my_profile', to: 'users#edit'
