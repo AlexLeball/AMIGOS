@@ -22,6 +22,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 26px;
+  margin-top: 6px;
 }
 
 .small-infos {
@@ -102,18 +103,42 @@
 
 .category-card {
   position: absolute;
-  top: 80px;
+  top: 110px;
   display: flex;
+  margin-left: 32px;
 
-  button {
-    color: white;
-    background-color: transparent;
-    border: none;
+  .event-selected {
+    font-family: Raleway;
+    font-size: 25px;
+    line-height: 72px;
+    font-weight: 800;
   }
 
-  button:disabled {
+  button {
     color: $amigos-green-primary-pale;
     background-color: transparent;
     border: none;
+
+    .underline {
+      height: 3px;
+      width: 100%;
+      background-color: transparent;
+      position: relative;
+      top: -23px;
+    }
+  }
+
+  button:disabled {
+    color: white;
+    background-color: transparent;
+    border: none;
+
+    .underline {
+      height: 3px;
+      width: 100%;
+      background-color: white;
+      position: relative;
+      top: -23px;
+    }
   }
 }
