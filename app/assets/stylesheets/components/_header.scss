@@ -10,14 +10,23 @@
   justify-content: center;
   margin-left: 40px;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
+
+  .emoji {
+    position: absolute;
+    left: 177px;
+    top: 38px;
+  }
 }
 
 .profile-firstname {
+  position: absolute;
   color: white;
   font-family: Raleway;
   font-size: 12px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  left: 86px;
+  top: 41px;
 }
