@@ -5,17 +5,18 @@
 }
 
 .profile-header {
-  display: inline-flex;
+  display: flex;
   height: 36px;
-  justify-content: center;
+  justify-content: space-between;
   margin-left: 40px;
+  margin-right: 40px;
   align-items: center;
-  margin-top: 30px;
+  padding-top: 50px;
 
   .emoji {
     position: absolute;
-    left: 177px;
-    top: 38px;
+    left: 185px;
+    top: 40px;
   }
 }
 
@@ -28,5 +29,5 @@
   font-weight: 900;
   line-height: normal;
   left: 86px;
-  top: 41px;
+  top: 44px;
 }
