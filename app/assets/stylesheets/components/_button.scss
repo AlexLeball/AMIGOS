@@ -29,6 +29,20 @@ input.btn {
   height: 60px;
   position: relative;
   bottom: -20px;
+  z-index: 999;
+}
+
+.button-primary-no-shadow {
+  display: block;
+  border-radius: 10px;
+  background-color: $amigos-green-primary;
+  height: 60px;
+  padding-left: 20px;
+  padding-top: 19px;
+  height: 60px;
+  position: relative;
+  bottom: -20px;
+  z-index: 999;
 }
 
 .button-primary-submit {
@@ -42,6 +56,7 @@ input.btn {
   position: relative;
   bottom: -40px;
   margin-bottom: 40px;
+  z-index: 999;
 
   .btn {
     text-align: left;
@@ -83,10 +98,16 @@ input.btn {
   color: white;
 }
 
+.bottom {
+  position: relative;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
 .sticky {
-  width: -webkit-fill-available;
-  position: fixed;
-  bottom: 40px;
+  position: sticky;
+  margin-top: 380px;
   margin-left: 40px;
   margin-right: 40px;
 }
