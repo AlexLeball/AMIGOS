@@ -4,7 +4,7 @@ import mapboxgl from 'mapbox-gl'
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    // markers: Array
   }
 
   connect() {
@@ -15,12 +15,12 @@ export default class extends Controller {
     style: "mapbox://styles/mapbox/streets-v10"
   })
 
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(this.map)
-    })
+  // #addMarkersToMap() {
+  //   this.markersValue.forEach((marker) => {
+  //     new mapboxgl.Marker()
+  //       .setLngLat([ marker.lng, marker.lat ])
+  //       .addTo(this.map)
+  //   })
   }
   #fitMapToMarkers(){
     const bounds = new mapboxgl.LngLatBounds()
