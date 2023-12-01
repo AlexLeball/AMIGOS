@@ -1,0 +1,35 @@
+.event-window {
+  z-index: 100;
+  width: 100%;
+  border-radius: 40px 40px 0px 0px;
+  background: #FFF;
+  box-shadow: 0px 4px 64px 0px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 90px;
+
+  .bg-image-event {
+    background-image: url("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701429850/event-image_phgxly.png");
+    height: 225px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+
+  .page-title {
+    margin-right: 40px;
+  }
+
+  .card-category {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .page-title {
+    margin-top: 0px;
+  }
+}
+
+.margin-event {
+  margin-left: 40px;
+  margin-right: 40px;
+}

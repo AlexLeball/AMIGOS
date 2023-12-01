@@ -82,3 +82,11 @@ input.btn {
   background-color: #7E73FF;
   color: white;
 }
+
+.sticky {
+  width: -webkit-fill-available;
+  position: fixed;
+  bottom: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
