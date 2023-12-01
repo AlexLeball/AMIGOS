@@ -7,9 +7,9 @@
   <div class="container-home-bottom">
     <p>Amigos vous connecte à tous les événements autour de chez vous en quelques clics.</p>
       <% if  user_signed_in? %>
-        <%= link_to "Vos événements", events_path, class: "button-primary a-style" %>
+        <%= link_to "Vos événements", events_path, class: "button-primary-no-shadow a-style" %>
       <% else %>
-        <%= link_to "S'inscrire", new_user_registration_path, class: "button-primary a-style" %>
+        <%= link_to "S'inscrire", new_user_registration_path, class: "button-primary-no-shadow a-style" %>
     <% end %>
   </div>
 </div>
