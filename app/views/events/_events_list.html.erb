@@ -4,7 +4,10 @@
     <div class="top-card">
       <div class="calendar">
         <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356565/card-calendar_bmkf1v.svg" alt="">
-        <p class="small-infos"><%= event.event_date %></p>
+<p class="small-infos">
+  <%= event.event_date.strftime('%A %e %B %Y').capitalize %>
+</p>
+
       </div>
 
         <% if user_signed_in? %>
