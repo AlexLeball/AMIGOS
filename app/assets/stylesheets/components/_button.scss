@@ -8,10 +8,6 @@
   line-height: normal;
 }
 
-input.btn {
-
-}
-
 .connexion-btn {
   position: relative;
   margin-left: 40px;
@@ -76,6 +72,7 @@ input.btn {
   z-index: 999;
   border: none;
   width: 100%;
+  padding-left: 20px;
 }
 
 // added class for categories in the registration page
