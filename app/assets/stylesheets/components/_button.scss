@@ -39,7 +39,6 @@ input.btn {
   height: 60px;
   padding-left: 20px;
   padding-top: 19px;
-  height: 60px;
   position: relative;
   margin-bottom: 60px;
   z-index: 999;
@@ -49,7 +48,6 @@ input.btn {
   display: block;
   border-radius: 10px;
   background-color: $amigos-green-primary;
-  height: 60px;
   padding-left: 20px;
   padding-top: 14px;
   height: 60px;
@@ -67,6 +65,16 @@ input.btn {
     font-weight: 900;
     line-height: normal;
   }
+}
+
+
+.button-secondary-search {
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+  height: 60px;
+  margin-bottom: 60px;
+  z-index: 999;
 }
 
 // added class for categories in the registration page

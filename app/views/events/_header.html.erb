@@ -11,6 +11,12 @@
       <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701339026/rxisl2uvzemnewbifidt.svg" alt="">
     </a>
     <div data-search-target="searchField" class="half-page-search" style="display: none;">
+      <!-- Pulsante per chiudere la barra di ricerca -->
+      <div class="close-search" style="text-align: right;">
+        <a href="#" class="close-click" data-action="click->search#toggleSearch">
+          Fermer
+        </a>
+      </div>
       <%= form_tag(events_path, method: :get) do %>
         <div class="form-group">
           <%= text_field_tag :query, params[:query], placeholder: "Rechercher par nom, ville", class: "form-control" %>
