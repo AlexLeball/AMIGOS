@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    event = Event.find(params[:event_id])
+    Event.find(params[:event_id])
     Favorite.find(params[:id]).destroy
     redirect_back(fallback_location: root_path, notice: 'Event removed from favorites successfully.')
   end

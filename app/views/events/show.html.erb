@@ -14,7 +14,14 @@
   <div class="bg-image-event"></div>
   <div class="event-bloc">
     <p class="chapo margin-event"><%= @event.short_description %></p>
+
+    <p class="small-infos margin-event" id="event-address">
+    <%= @event.address %>
+    <a href="#" id="show-map-link">Show Map</a>
+    </p>
+
     <%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary-no-shadow a-style margin-event" %>
+
     <p class="small-infos margin-event"><%= @event.address %></p>
     <p class="description margin-event"><%= @event.limit_participants %></p>
     <p class="small-infos margin-event"><%= @event.city %></p>
@@ -30,6 +37,10 @@
     <%= link_to 'edit', edit_event_path(@event) %>
   <% end %>
 
+</div>
+
+<div data-view-switcher-target="map" hidden>
+  <%= render partial: 'map', locals: { map: @map } %>
 </div>
 
 <%= link_to 'back to events', events_path %>
