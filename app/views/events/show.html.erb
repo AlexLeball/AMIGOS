@@ -14,18 +14,17 @@
   <div class="event-bloc">
     <p class="chapo margin-event"><%= @event.short_description %></p>
 
-    <p class="small-infos margin-event" id="event-address">
-    <%= @event.address %>
-    <a href="#" id="show-map-link">Show Map</a>
     </p>
 
     <%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary-no-shadow a-style margin-event" %>
 
-    <p class="small-infos margin-event"><%= @event.address %></p>
+    <p class="small-infos margin-event" id="event-address"><%= @event.address %>
+    <a href="#" id="show-map-link">Show Map</a>
     <p class="description margin-event"><%= @event.limit_participants %></p>
     <p class="small-infos margin-event"><%= @event.city %></p>
     <p class="small-infos margin-event"><%= @event.event_date %></p>
     <p class="description margin-event"><%= @event.long_description %></p>
+    <div class="empty-container-80"></div>
   </div>
 
   <% if current_user == @event.user %>
