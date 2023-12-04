@@ -1,6 +1,6 @@
 meta_product_name: “Amigos”
 meta_title: “Amigos - Faites vous des amis à tout âge”
 meta_description: “Faites vous des amis à tout âge”
-meta_image: “background-home.png” # should exist in `app/assets/images/`
+meta_image: “shoes.png” # should exist in `app/assets/images/`
 meta_product_name: “Product Name”
 twitter_account: “@product_twitter_account”
