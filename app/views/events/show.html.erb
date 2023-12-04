@@ -12,17 +12,21 @@
   <p class="card-category"><%= @event.category.name.upcase %></p>
   <h1 class="page-title"><%= @event.title %></h1>
   <div class="bg-image-event"></div>
-  <div>
+  <div class="event-bloc">
     <p class="chapo margin-event"><%= @event.short_description %></p>
+
     <p class="small-infos margin-event" id="event-address">
     <%= @event.address %>
     <a href="#" id="show-map-link">Show Map</a>
     </p>
+
+    <%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary-no-shadow a-style margin-event" %>
+
     <p class="small-infos margin-event"><%= @event.address %></p>
+    <p class="description margin-event"><%= @event.limit_participants %></p>
     <p class="small-infos margin-event"><%= @event.city %></p>
     <p class="small-infos margin-event"><%= @event.event_date %></p>
     <p class="description margin-event"><%= @event.long_description %></p>
-    <p class="description margin-event"><%= @event.limit_participants %></p>
   </div>
 
   <% if current_user == @event.user %>
@@ -32,6 +36,7 @@
   <% if current_user == @event.user %>
     <%= link_to 'edit', edit_event_path(@event) %>
   <% end %>
+
 </div>
 
 <div data-view-switcher-target="map" hidden>
@@ -39,5 +44,3 @@
 </div>
 
 <%= link_to 'back to events', events_path %>
-
-<%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary a-style sticky" %>

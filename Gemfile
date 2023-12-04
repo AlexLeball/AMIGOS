@@ -79,3 +79,4 @@ group :test do
 end
 
 gem "serviceworker-rails"
+gem 'strftime-rails', '~> 0.9.2'
