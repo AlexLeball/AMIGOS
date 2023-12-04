@@ -35,10 +35,17 @@
           <p class="small-infos"><%= event.city %></p>
         </div>
 
-        <div class="participants">
-          <p class="small-infos">Places restantes : <strong><%= event.limit_participants %></strong></p>
-          <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356749/card-participants_n7yaje.svg" alt="">
-        </div>
+ <div class="participants">
+      <p class="small-infos">
+        Places occupées: <strong><%= event.participants_count %></strong> /
+        <% if event.limit_participants == -1 %>
+          Illimité
+        <% else %>
+          <%= event.limit_participants %>
+        <% end %>
+      </p>
+      <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356749/card-participants_n7yaje.svg" alt="">
+    </div>
 
       </div>
     <% end %>

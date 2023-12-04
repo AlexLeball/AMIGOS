@@ -13,9 +13,7 @@ class RegistrationsController < ApplicationController
     @registration.status = "en attente"
 
     if @registration.save
-      # decrement the limit_participants by 1
-      @event.decrement!(:limit_participants) if @event.limit_participants.present?
-
+      @event.increment!(:participants_count)
       redirect_to events_path
     else
       render :new
