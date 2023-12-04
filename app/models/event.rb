@@ -1,4 +1,18 @@
 class Event < ApplicationRecord
+  include PgSearch::Model
+
+  pg_search_scope :search_by_category_city_and_name,
+                  associated_against: {
+                    category: :name
+                  },
+                  against: {
+                    city: 'A',
+                    title: 'B'
+                  },
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+
   belongs_to :user
   belongs_to :category
   has_many :registrations, dependent: :destroy

@@ -80,3 +80,4 @@ end
 
 gem "serviceworker-rails"
 gem 'strftime-rails', '~> 0.9.2'
+gem "pg_search"
