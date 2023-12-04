@@ -67,7 +67,6 @@ input.btn {
   }
 }
 
-
 .button-secondary-search {
   border-radius: 10px;
   color: white;
@@ -75,6 +74,8 @@ input.btn {
   height: 60px;
   margin-bottom: 60px;
   z-index: 999;
+  border: none;
+  width: 100%;
 }
 
 // added class for categories in the registration page
