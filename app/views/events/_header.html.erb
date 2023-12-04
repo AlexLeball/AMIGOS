@@ -6,9 +6,19 @@
       <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701338744/cdtryazdakrijjpa2wo8.png" alt="" class="emoji">
     <% end %>
     <div class="search">
-      <%= link_to my_profile_path, class: "search-click" do %>
-      <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701339026/rxisl2uvzemnewbifidt.svg" alt="">
+<div data-controller="search">
+  <a href="#" class="search-click" data-action="click->search#toggleSearch">
+    <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701339026/rxisl2uvzemnewbifidt.svg" alt="">
+  </a>
+  <div data-search-target="searchField" style="display: none;">
+    <%= form_tag(events_path, method: :get) do %>
+      <div class="form-group">
+        <%= text_field_tag :query, params[:query], placeholder: "Rechercher par nom, ville", class: "form-control" %>
+      </div>
+      <%= submit_tag "Rechercher", class: "btn btn-primary" %>
     <% end %>
+  </div>
+</div>
     </div>
   </div>
 </div>

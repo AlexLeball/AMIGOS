@@ -2,7 +2,11 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show] # Modifica questa linea in base alla tua autenticazione
 
   def index
-    @events = Event.all
+    @events = if params[:query].present?
+      Event.search_by_category_city_and_name(params[:query])
+    else
+      Event.all
+    end
     @categories = Category.all
     @markers = @events.geocoded.map do |flat|
       {
