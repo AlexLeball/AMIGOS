@@ -1,5 +1,8 @@
 <div id="categories">
-  <% @categories.each do |category| %>
+
+  <% categories = @categories.sort_by{ |m| m.name } %>
+
+  <% categories.each do |category| %>
     <%= link_to category_path(category) do %>
       <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701426421/category_v2xar9.png" alt="">
       <p><%= category.name %></p>

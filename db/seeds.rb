@@ -5,6 +5,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "open-uri"
+
 Event.destroy_all
 Category.destroy_all
 User.destroy_all
@@ -75,21 +77,29 @@ user6 = User.create!(
   creator: false,
 )
 
-category1 = Category.create!(
-  name: 'Cuisine'
-)
+# category1 = Category.create!(
+#   name: 'Cuisine'
+# )
 
-category2 = Category.create!(
-  name: 'Lecture'
-)
+fileCuisine = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701426421/category_v2xar9.png")
+category1 = Category.new(name: "Cuisine")
+category1.photo.attach(io: fileCuisine, filename: "cuisine.png", content_type: "image/png")
+category1.save
 
-category3 = Category.create!(
-  name: 'Artisanat'
-)
+fileLecture = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701426421/category_v2xar9.png")
+category2 = Category.new(name: "Lecture")
+category2.photo.attach(io: fileLecture, filename: "cuisine.png", content_type: "image/png")
+category2.save
 
-category4 = Category.create!(
-  name: 'Yoga'
-)
+fileArtisanat = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701426421/category_v2xar9.png")
+category3 = Category.new(name: "Artisanat")
+category3.photo.attach(io: fileArtisanat, filename: "artisanat.png", content_type: "image/png")
+category3.save
+
+fileYoga = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701426421/category_v2xar9.png")
+category4 = Category.new(name: "Yoga")
+category4.photo.attach(io: fileYoga, filename: "yoga.png", content_type: "image/png")
+category4.save
 
 category5 = Category.create!(
   name: 'Randonnée'
