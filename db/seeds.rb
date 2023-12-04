@@ -239,7 +239,7 @@ Event.create!(
   event_date: '2023-03-12',
   limit_participants: 30,
   user: user1,
-  category: category8
+  category: category1
 )
 
 Event.create!(

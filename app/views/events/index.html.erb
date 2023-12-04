@@ -1,6 +1,11 @@
+
 <%= render partial: 'header' %>
 
 <div data-controller="view-switcher" class="event-container">
+
+<div class="flotting-btn">
+  <%= link_to "Créer un événement", new_event_path, class: "button-primary a-style" %>
+</div>
 
   <div class="category-card">
     <button data-action="click->view-switcher#toggleView" data-target="view-switcher.eventsButton" data-disable-with="Events">

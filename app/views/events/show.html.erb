@@ -1,15 +1,14 @@
 <%= render partial: 'header' %>
 
 <div class="event-window">
-
   <div class="header-back">
-    <%= link_to root_path do %>
+    <%= link_to events_path do %>
       <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
       <p>retour</p>
     <% end %>
   </div>
 
-  <p class="card-category"><%= @event.category.name.upcase %></p>
+  <p class="card-category-title"><%= @event.category.name.upcase %></p>
   <h1 class="page-title"><%= @event.title %></h1>
   <div class="bg-image-event"></div>
   <div class="event-bloc">
