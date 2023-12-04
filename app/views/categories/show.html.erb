@@ -1,20 +1,30 @@
-<h1><%= @category.name %></h1>
+<%= render partial: 'events/header' %>
 
-<h2>Events in this category:</h2>
-  <% @events.each do |event| %>
-    <%= link_to event.title, event_path(event) %>
-<p><strong>Event date:</strong> <%= event.event_date %></p>
-    <p><strong>City:</strong> <%= event.city %></p>
-    <p><strong>Info:</strong> <%= event.short_description %></p>
-    <p><strong>Limit participants:</strong> <%= event.limit_participants %></p>
-
-    <% if user_signed_in? %>
-      <% favorite = current_user.favorites.find_by(event: event) %>
-      <% if favorite %>
-        <%= link_to 'Remove from Favorites', event_favorite_path(event, favorite), method: :delete, data: { turbo_method: :delete } %>
-      <% else %>
-        <%= link_to 'Add to Favorites', event_favorites_path(event), method: :post, data: { turbo_method: :post } %>
-      <% end %>
+<div class="event-window">
+  <div class="header-back">
+    <%= link_to root_path do %>
+      <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
+      <p>retour</p>
     <% end %>
   </div>
-<% end %>
+
+    <% @events.each do |event| %>
+      <%= link_to event_path(event) %>
+      <h1 class="page-title"><%= event.title %></h1>
+      <p class="small-infos margin-event"><%= event.event_date %></p>
+      <p class="small-infos margin-event"><%= event.city %></p>
+      <p class="chapo margin-event"><%= event.short_description %></p>
+      <p class="description margin-event">Limit participants: <%= event.limit_participants %></p>
+
+      <% if user_signed_in? %>
+        <% favorite = current_user.favorites.find_by(event: event) %>
+        <% if favorite %>
+          <%= link_to 'Remove from Favorites', event_favorite_path(event, favorite), method: :delete, data: { turbo_method: :delete } %>
+        <% else %>
+          <%= link_to 'Add to Favorites', event_favorites_path(event), method: :post, data: { turbo_method: :post } %>
+        <% end %>
+      <% end %>
+    <% end %>
+</div>
+
+<%= link_to 'back to events', events_path %>

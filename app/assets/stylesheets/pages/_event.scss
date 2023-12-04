@@ -10,8 +10,8 @@
   .bg-image-event {
     background-image: url("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701429850/event-image_phgxly.png");
     height: 225px;
-    width: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
     margin-bottom: 20px;
   }
 
@@ -32,4 +32,8 @@
 .margin-event {
   margin-left: 40px;
   margin-right: 40px;
+}
+
+.event-bloc {
+  height: 100%;
 }
