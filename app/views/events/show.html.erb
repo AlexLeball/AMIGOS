@@ -14,6 +14,10 @@
   <div class="bg-image-event"></div>
   <div>
     <p class="chapo margin-event"><%= @event.short_description %></p>
+    <p class="small-infos margin-event" id="event-address">
+    <%= @event.address %>
+    <a href="#" id="show-map-link">Show Map</a>
+    </p>
     <p class="small-infos margin-event"><%= @event.address %></p>
     <p class="small-infos margin-event"><%= @event.city %></p>
     <p class="small-infos margin-event"><%= @event.event_date %></p>
@@ -28,6 +32,10 @@
   <% if current_user == @event.user %>
     <%= link_to 'edit', edit_event_path(@event) %>
   <% end %>
+</div>
+
+<div data-view-switcher-target="map" hidden>
+  <%= render partial: 'map', locals: { map: @map } %>
 </div>
 
 <%= link_to 'back to events', events_path %>
