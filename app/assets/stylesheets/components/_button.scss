@@ -63,6 +63,19 @@
   }
 }
 
+.button-primary-register {
+  border-radius: 10px;
+  color: white;
+  background-color: $amigos-green-primary;
+  height: 60px;
+  margin-bottom: 60px;
+  z-index: 999;
+  border: none;
+  width: 100%;
+  padding-left: 20px;
+}
+
+
 .button-secondary-search {
   border-radius: 10px;
   color: white;

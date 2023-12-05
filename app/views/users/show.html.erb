@@ -5,7 +5,7 @@
   </div>
 <br>
   <div>
-  <h1>Vos événments à valider:</h1>
+  <h1>Vos événements à valider:</h1>
   <% @your_own_events.each do |event| %>
     <div>
       <% unless event.registrations.empty? %>
@@ -13,7 +13,7 @@
       <%= "#{event.title}" %>
       <br>
         <% event.registrations.each do |registration| %>
-          <%= "#{registration.user.first_name} à demandé de rejoindre cette événment" %>
+          <%= "#{registration.user.first_name} a demandé à rejoindre cet événement" %>
           <br>
           <%= "La demande est #{registration.status}" %>
           <br>

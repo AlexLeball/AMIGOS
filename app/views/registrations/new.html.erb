@@ -1,1 +1,12 @@
-<%= render "registrations/form", registration: @registration, event: @event %>
+<div class="close-register">
+  <%= link_to :back do %>
+    <p class="close">Fermer</p>
+    <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701698624/close-popup_qhxdp5.svg" alt="">
+  <% end %>
+</div>
+
+<h1 class="page-title">Vous y êtes presque</h1>
+<div class="form-container">
+  <p>Vous souhaitez ajouter votre profil et votre motivation auprès de l’organisateur et de ses membres ?</p>
+  <%= render "registrations/form", registration: @registration, event: @event %>
+</div>

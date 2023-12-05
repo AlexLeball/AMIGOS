@@ -1,0 +1,23 @@
+.close-register {
+  margin-right: 40px;
+}
+
+.registration_introduction {
+  margin-top: 40px;
+}
+
+.input-field {
+  height: 240px;
+}
+
+.close-register a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-decoration: none;
+  margin-top: 40px;
+
+  p {
+    margin-right: 10px;
+  }
+}
