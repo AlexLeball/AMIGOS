@@ -1,15 +1,12 @@
 <%= render partial: 'header' %>
 <div class="event-window">
 
-  <div data-controller="map">
-    <button data-action="click->map#showMap">Show Map</button>
-      <div class="d-none" data-map-target="mapPartial">
-        <div style="width: 100%; height: 600px;"
-          data-map-markers-value="<%= @markers.to_json %>"
-          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
+    <div style="width: 100%; height: 600px;"
+      data-controller="map-event"
+      data-map-event-markers-value="<%= @markers.to_json %>"
+      data-map-event-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<button data-map-event-target="btn" data-action="click->map-event#loadMap">Prions !!!!</button>
     </div>
-  </div>
 
     <div class="header-back">
       <%= link_to events_path do %>

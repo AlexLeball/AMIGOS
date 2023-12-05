@@ -3,18 +3,13 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @events = if params[:query].present?
+    @events =
+      if params[:query].present?
         Event.search_by_category_city_and_name(params[:query]).order(event_date: :asc)
       else
         Event.all.order(event_date: :asc)
       end
     @categories = Category.all
-    @markers = @events.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude
-      }
-    end
   end
 
   def categories
@@ -23,12 +18,18 @@ class EventsController < ApplicationController
   end
 
   def show
+    @markers = []
     @event = Event.find(params[:id])
-    @markers = Event.geocoded.map do |event|
-      {
-        lat: event.latitude,
-        lng: event.longitude
-      }
+
+    @events = Event.all
+    @events.geocoded.map do |event|
+      if event == @event
+        marker = {
+          lat: event.latitude,
+          lng: event.longitude
+        }
+        @markers << marker
+      end
     end
   end
 
@@ -78,6 +79,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:event_id, :title, :address, :city, :short_description, :long_description, :event_date, :limit_participants, :category_id)
+    params.require(:event).permit(:title, :address, :city, :short_description, :long_description, :event_date, :limit_participants)
   end
 end
