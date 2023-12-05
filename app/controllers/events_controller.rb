@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show] # Modifica questa linea in base alla tua autenticazione
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @events = if params[:query].present?
@@ -8,10 +8,10 @@ class EventsController < ApplicationController
       Event.all.order(event_date: :asc)
     end
     @categories = Category.all
-    @markers = @events.geocoded.map do |flat|
+    @markers = @events.geocoded.map do |event|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: event.latitude,
+        lng: event.longitude
       }
     end
   end

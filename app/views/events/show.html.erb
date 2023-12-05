@@ -1,45 +1,46 @@
 <%= render partial: 'header' %>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet">
 
-<div class="event-window">
-  <div class="header-back">
-    <%= link_to events_path do %>
-      <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
-      <p>retour</p>
+<div class="event-window" data-controller="map">
+    <div class="header-back">
+      <%= link_to events_path do %>
+        <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
+        <p>retour</p>
+      <% end %>
+    </div>
+
+    <p class="card-category-title"><%= @event.category.name.upcase %></p>
+    <h1 class="page-title"><%= @event.title %></h1>
+    <div class="bg-image-event" data-action="click->map#test"></div>
+    <div class="event-bloc">
+      <p class="chapo margin-event"><%= @event.short_description %></p>
+
+      <p class="small-infos margin-event" id="event-address">
+        <%= @event.address %>
+        <a href="#" id="show-map-link">Show Map</a>
+
+      </p>
+      <%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary-no-shadow a-style margin-event" %>
+
+      <p class="small-infos margin-event"><%= @event.address %></p>
+      <p class="description margin-event"><%= @event.limit_participants %></p>
+      <p class="small-infos margin-event"><%= @event.city %></p>
+      <p class="small-infos margin-event"><%= @event.event_date %></p>
+      <p class="description margin-event"><%= @event.long_description %></p>
+    </div>
+
+    <% if current_user == @event.user %>
+      <%= link_to 'delete', event_path(@event), data: { turbo_method: :delete } %>
     <% end %>
+
+    <% if current_user == @event.user %>
+      <%= link_to 'edit', edit_event_path(@event) %>
+    <% end %>
+
+
+  <div data-map-target="map" class="display_none">
+    <%= render partial: 'map', locals: { map: @map } %>
   </div>
 
-  <p class="card-category-title"><%= @event.category.name.upcase %></p>
-  <h1 class="page-title"><%= @event.title %></h1>
-  <div class="bg-image-event"></div>
-  <div class="event-bloc">
-    <p class="chapo margin-event"><%= @event.short_description %></p>
-
-    <p class="small-infos margin-event" id="event-address">
-    <%= @event.address %>
-    <a href="#" id="show-map-link">Show Map</a>
-    </p>
-
-    <%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary-no-shadow a-style margin-event" %>
-
-    <p class="small-infos margin-event"><%= @event.address %></p>
-    <p class="description margin-event"><%= @event.limit_participants %></p>
-    <p class="small-infos margin-event"><%= @event.city %></p>
-    <p class="small-infos margin-event"><%= @event.event_date %></p>
-    <p class="description margin-event"><%= @event.long_description %></p>
-  </div>
-
-  <% if current_user == @event.user %>
-    <%= link_to 'delete', event_path(@event), data: { turbo_method: :delete } %>
-  <% end %>
-
-  <% if current_user == @event.user %>
-    <%= link_to 'edit', edit_event_path(@event) %>
-  <% end %>
-
 </div>
-
-<div data-view-switcher-target="map" hidden>
-  <%= render partial: 'map', locals: { map: @map } %>
-</div>
-
 <%= link_to 'back to events', events_path %>
