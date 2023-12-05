@@ -25,17 +25,15 @@
     <div class="bg-image-event"></div>
     <div class="event-bloc">
       <p class="chapo margin-event"><%= @event.short_description %></p>
-
-      <p class="small-infos margin-event" id="event-address">
-        <%= @event.address %>
-
-      </p>
       <%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary-no-shadow a-style margin-event" %>
 
+    <h2 class="subtitle">Informations générales</h2>
       <p class="small-infos margin-event"><%= @event.address %></p>
       <p class="description margin-event"><%= @event.limit_participants %></p>
       <p class="small-infos margin-event"><%= @event.city %></p>
       <p class="small-infos margin-event"><%= @event.event_date %></p>
+
+    <h2 class="subtitle">Description de l'événement</h2>
       <p class="description margin-event"><%= @event.long_description %></p>
     </div>
 
@@ -46,7 +44,4 @@
     <% if current_user == @event.user %>
       <%= link_to 'edit', edit_event_path(@event) %>
     <% end %>
-
 </div>
-
-<%= link_to 'back to events', events_path %>
