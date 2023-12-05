@@ -64,16 +64,18 @@
       </div>
 
     <h2 class="subtitle">Description de l'événement</h2>
-      <p class="description margin-event"><%= @event.long_description %></p>
+      <p class="description margin-event mt-3"><%= @event.long_description %></p>
     </div>
 
-    <% if current_user == @event.user %>
-      <%= link_to 'delete', event_path(@event), data: { turbo_method: :delete } %>
-    <% end %>
+    <div class="margin-event">
+      <% if current_user == @event.user %>
+        <%= link_to 'Supprimer', event_path(@event), data: { turbo_method: :delete }, class: "button-primary-no-margin a-style" %>
+      <% end %>
 
-    <% if current_user == @event.user %>
-      <%= link_to 'edit', edit_event_path(@event) %>
-    <% end %>
+      <% if current_user == @event.user %>
+        <%= link_to 'Modifier', edit_event_path(@event), class: "button-ternary a-style" %>
+      <% end %>
+    </div>
 </div>
 
 <div class="empty-container-80"></div>
