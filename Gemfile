@@ -81,3 +81,4 @@ end
 gem "serviceworker-rails"
 gem 'strftime-rails', '~> 0.9.2'
 gem "pg_search"
+gem 'rails-i18n', '~> 7.0.0' # For 7.0.0

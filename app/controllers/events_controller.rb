@@ -3,9 +3,9 @@ class EventsController < ApplicationController
 
   def index
     @events = if params[:query].present?
-      Event.search_by_category_city_and_name(params[:query]).order(event_date: :asc)
+      Event.search_by_category_city_and_name(params[:query])
     else
-      Event.all.order(event_date: :asc)
+      Event.all
     end
     @categories = Category.all
     @markers = @events.geocoded.map do |event|
