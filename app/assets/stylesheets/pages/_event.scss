@@ -15,10 +15,6 @@
     margin-bottom: 20px;
   }
 
-  .page-title {
-    margin-right: 40px;
-  }
-
   .card-category {
     margin-right: 40px;
   }
@@ -26,10 +22,6 @@
   .card-category-title {
     margin-left: 40px;
     margin-right: 40px;
-  }
-
-  .page-title {
-    margin-top: 0px;
   }
 }
 
@@ -43,7 +35,7 @@
 }
 
 .event-bloc {
-  height: 100%;
+  margin-bottom: 60px;
 }
 
 .category-image {
@@ -96,4 +88,8 @@
 
 .category-event {
   margin-left: 40px;
+}
+
+.description .margin-event {
+  margin-top: 20px;
 }
