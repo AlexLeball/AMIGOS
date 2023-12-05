@@ -6,11 +6,23 @@
 .form-label {
   color: #000;
   font-family: Raleway;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   margin-bottom: 0px;
   margin-left: 16px;
+}
+
+.form-check {
+  margin-bottom: 30px;
+}
+
+.form-check-label {
+  color: #000;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
 }
 
 .form-control {
@@ -26,4 +38,12 @@
 
 .margin60 {
   margin-top: 60px;
+}
+
+.underline-grey {
+  height: 1px;
+  width: 100%;
+  background-color: $amigos-grey-light;
+  position: relative;
+  top: -22px;
 }
