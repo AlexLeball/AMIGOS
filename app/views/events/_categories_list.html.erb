@@ -4,8 +4,8 @@
 
   <% categories.each do |category| %>
     <%= link_to category_path(category) do %>
-      <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701426421/category_v2xar9.png" alt="">
-      <p><%= category.name %></p>
+      <%= cl_image_tag category.photo.key, height: 500, width: 500, crop: :fill, class:"category-image" %>
+      <p><%= category.name.capitalize %></p>
     <% end %>
   <% end %>
 </div>

@@ -81,7 +81,7 @@ user6 = User.create!(
 
 puts 'Creating categories...'
 
-cuisine = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790375/cooking_alc3pk.jpg")
+cuisine = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701792616/cooking_2_sheo3g.png")
 categoryCuisine = Category.new(name: "cuisine")
 categoryCuisine.photo.attach(io: cuisine, filename: "cuisine.jpg", content_type: "image/png")
 categoryCuisine.save
@@ -96,7 +96,7 @@ categoryArtisanat = Category.new(name: "artisanat")
 categoryArtisanat.photo.attach(io: artisanat, filename: "artisanat.jpg", content_type: "image/png")
 categoryArtisanat.save
 
-yoga = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790374/yoga_xqfqlq.jpg")
+yoga = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701792623/yoga01_u0wzpa.png")
 categoryYoga = Category.new(name: "yoga")
 categoryYoga.photo.attach(io: yoga, filename: "yoga.jpg", content_type: "image/png")
 categoryYoga.save
@@ -111,32 +111,32 @@ categoryLangues = Category.new(name: "langues")
 categoryLangues.photo.attach(io: langues, filename: "langues.jpg", content_type: "image/png")
 categoryLangues.save
 
-photographie = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790375/photographie_q1veno.jpg")
+photographie = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701792615/photo1_hbh0l6.png")
 categoryPhotographie = Category.new(name: "photographie")
 categoryPhotographie.photo.attach(io: photographie, filename: "photographie.jpg", content_type: "image/png")
 categoryPhotographie.save
 
-danse = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790374/danse_itrbzi.jpg")
+danse = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701792617/dance01_rux7py.png")
 categoryDanse = Category.new(name: "danse")
 categoryDanse.photo.attach(io: danse, filename: "danse.jpg", content_type: "image/png")
 categoryDanse.save
 
-concert = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790375/concerts_im9lfd.jpg")
+concert = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701792621/conert01_svfq5b.png")
 categoryConcert = Category.new(name: "concert")
 categoryConcert.photo.attach(io: concert, filename: "concert.jpg", content_type: "image/png")
 categoryConcert.save
 
-theatre = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790373/theatre_acgppx.jpg")
+theatre = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701792626/theatre_ripxeh.png")
 categoryTheatre = Category.new(name: "theatre")
 categoryTheatre.photo.attach(io: theatre, filename: "theatre.jpg", content_type: "image/png")
 categoryTheatre.save
 
 cinema = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790373/cinema_qnpyyh.jpg")
-categoryCinema = Category.new(name: "cinema")
+categoryCinema = Category.new(name: "cinéma")
 categoryCinema.photo.attach(io: cinema, filename: "cinema.jpg", content_type: "image/png")
 categoryCinema.save
 
-sport = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790376/sport_qo5lej.jpg")
+sport = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701792628/sport01_miv6gl.png")
 categorySport = Category.new(name: "sport")
 categorySport.photo.attach(io: sport, filename: "sport.jpg", content_type: "image/png")
 categorySport.save
@@ -173,7 +173,11 @@ Event.create!(
   event_date: '2023-08-12',
   limit_participants: 10,
   user: user1,
+<<<<<<< HEAD
   category: categoryArtisanat
+=======
+  category: categoryCuisine
+>>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -187,7 +191,11 @@ Event.create!(
   event_date: '2023-02-12',
   limit_participants: 5,
   user: user2,
+<<<<<<< HEAD
   category: categoryCinema
+=======
+  category: categoryArtisanat
+>>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -201,7 +209,11 @@ Event.create!(
   event_date: '2023-01-12',
   limit_participants: 18,
   user: user3,
+<<<<<<< HEAD
   category: categoryLecture
+=======
+  category: categoryLangues
+>>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -237,7 +249,11 @@ Event.create!(
   event_date: '2023-04-12',
   limit_participants: 20,
   user: user5,
+<<<<<<< HEAD
   category: categoryDanse
+=======
+  category: categoryCinema
+>>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -257,7 +273,11 @@ Event.create!(
   event_date: '2023-03-12',
   limit_participants: 30,
   user: user1,
+<<<<<<< HEAD
   category: categoryPhotographie
+=======
+  category: categoryDanse
+>>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -279,7 +299,11 @@ Event.create!(
   event_date: '2023-10-12',
   limit_participants: 12,
   user: user3,
+<<<<<<< HEAD
   category: categoryRandonnee
+=======
+  category: categoryPhotographie
+>>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 puts 'All seeds are generated...'
