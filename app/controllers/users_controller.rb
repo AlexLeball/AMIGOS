@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def show
+      render 'error_pages/500', status: 500
+
     @user = current_user
     @editable = params[:edit].present?
     @registrations = @user.registrations
