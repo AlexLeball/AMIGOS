@@ -1,0 +1,32 @@
+.close-register {
+  margin-right: 40px;
+}
+
+.registration_introduction {
+  margin-top: 40px;
+}
+
+.input-field {
+  height: 240px;
+}
+
+.close-register a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-decoration: none;
+  margin-top: 40px;
+
+  p {
+    margin-right: 10px;
+  }
+}
+
+.success-image {
+  height: 282px;
+  width: 100%;
+  background-image: url("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701767796/success_nyijg6.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -21,3 +21,7 @@ class Event < ApplicationRecord
       tsearch: { prefix: true }
     }
 end
+
+def participants_count
+  registrations.count
+end

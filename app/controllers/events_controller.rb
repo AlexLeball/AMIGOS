@@ -3,12 +3,10 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @events = if params[:query].present?
-        Event.search_by_category_city_and_name(params[:query]).order(event_date: :asc)
-      else
-        Event.all.order(event_date: :asc)
-      end
-
+    @events = if params[:query].present?      Event.search_by_category_city_and_name(params[:query])
+    else
+      Event.all
+    end
     @categories = Category.all
     # The `geocoded` scope filters only flats with coordinates
     @markers = @events.geocoded.map do |event|

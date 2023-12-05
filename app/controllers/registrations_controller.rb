@@ -13,10 +13,8 @@ class RegistrationsController < ApplicationController
     @registration.status = "en attente"
 
     if @registration.save
-      # decrement the limit_participants by 1
-      @event.decrement!(:limit_participants) if @event.limit_participants.present?
-
-      redirect_to events_path
+      @event.increment!(:participants_count)
+      redirect_to confirmation_event_registration_path(params[:event_id], @registration.id)
     else
       render :new
     end
@@ -34,6 +32,9 @@ class RegistrationsController < ApplicationController
   def reject
     Registration.update(status: "rejetée")
     redirect_to events_path(@event)
+  end
+
+  def confirmation
   end
 
 private
