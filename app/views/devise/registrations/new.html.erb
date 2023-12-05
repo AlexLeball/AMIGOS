@@ -34,10 +34,11 @@
       <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :birth_date,
-                  required: true,
-                  label: 'Date de naissance',
-                  as: :date %>
+<%= f.input :birth_date, label: 'Date de naissance', as: :date,
+                         start_year: Date.today.year - 60,
+                         end_year: 1923,
+                         required: true,
+                         error: 'Merci de préciser votre date de naissance' %>
       <%= f.input :city,
                   required: true,
                   as: :search %>
