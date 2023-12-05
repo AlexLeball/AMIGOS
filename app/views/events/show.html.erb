@@ -1,7 +1,19 @@
 <%= render partial: 'header' %>
-<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
 
-<div class="event-window" data-controller="map">
+<div class="event-window" >
+  <div data-controller="map" data-map-target="mapContainer">
+    <button id="show-map-link" data-action="click->map#showMap" data-map-target="mapButton">Show Map</button>
+    <div data-map-target="mapPartial">
+      <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+    </div>
+  </div>
+<%= link_to 'back to events', events_path %>
+
     <div class="header-back">
       <%= link_to events_path do %>
         <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
@@ -11,13 +23,12 @@
 
     <p class="card-category-title"><%= @event.category.name.upcase %></p>
     <h1 class="page-title"><%= @event.title %></h1>
-    <div class="bg-image-event" data-action="click->map#test"></div>
+    <div class="bg-image-event"></div>
     <div class="event-bloc">
       <p class="chapo margin-event"><%= @event.short_description %></p>
 
       <p class="small-infos margin-event" id="event-address">
         <%= @event.address %>
-        <a href="#" id="show-map-link">Show Map</a>
 
       </p>
       <%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary-no-shadow a-style margin-event" %>
@@ -36,11 +47,6 @@
     <% if current_user == @event.user %>
       <%= link_to 'edit', edit_event_path(@event) %>
     <% end %>
-
-
-  <div data-map-target="map" class="display_none">
-    <%= render partial: 'map', locals: { map: @map } %>
-  </div>
 
 </div>
 <%= link_to 'back to events', events_path %>

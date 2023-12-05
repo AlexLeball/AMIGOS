@@ -2,12 +2,15 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
+    @events = Event.all
     @events = if params[:query].present?
-      Event.search_by_category_city_and_name(params[:query]).order(event_date: :asc)
-    else
-      Event.all.order(event_date: :asc)
-    end
+        Event.search_by_category_city_and_name(params[:query]).order(event_date: :asc)
+      else
+        Event.all.order(event_date: :asc)
+      end
+
     @categories = Category.all
+    # The `geocoded` scope filters only flats with coordinates
     @markers = @events.geocoded.map do |event|
       {
         lat: event.latitude,
