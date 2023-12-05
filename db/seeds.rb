@@ -87,9 +87,9 @@ categoryCuisine.photo.attach(io: cuisine, filename: "cuisine.jpg", content_type:
 categoryCuisine.save
 
 lecture = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790375/lecture_gdpj9y.jpg")
-categorylecture = Category.new(name: "lecture")
-categorylecture.photo.attach(io: lecture, filename: "lecture.jpg", content_type: "image/png")
-categorylecture.save
+categoryLecture = Category.new(name: "lecture")
+categoryLecture.photo.attach(io: lecture, filename: "lecture.jpg", content_type: "image/png")
+categoryLecture.save
 
 artisanat = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790373/artisanat_vkncac.jpg")
 categoryArtisanat = Category.new(name: "artisanat")
@@ -173,7 +173,7 @@ Event.create!(
   event_date: '2023-08-12',
   limit_participants: 10,
   user: user1,
-  category: category12
+  category: categoryArtisanat
 )
 
 Event.create!(
@@ -187,7 +187,7 @@ Event.create!(
   event_date: '2023-02-12',
   limit_participants: 5,
   user: user2,
-  category: category1
+  category: categoryCinema
 )
 
 Event.create!(
@@ -201,7 +201,7 @@ Event.create!(
   event_date: '2023-01-12',
   limit_participants: 18,
   user: user3,
-  category: category7
+  category: categoryLecture
 )
 
 Event.create!(
@@ -217,7 +217,7 @@ Event.create!(
   event_date: '2023-07-12',
   limit_participants: 35,
   user: user1,
-  category: category9
+  category: categoryConcert
 )
 
 Event.create!(
@@ -237,7 +237,7 @@ Event.create!(
   event_date: '2023-04-12',
   limit_participants: 20,
   user: user5,
-  category: category11
+  category: categoryDanse
 )
 
 Event.create!(
@@ -257,7 +257,7 @@ Event.create!(
   event_date: '2023-03-12',
   limit_participants: 30,
   user: user1,
-  category: category1
+  category: categoryPhotographie
 )
 
 Event.create!(
@@ -279,7 +279,7 @@ Event.create!(
   event_date: '2023-10-12',
   limit_participants: 12,
   user: user3,
-  category: category5
+  category: categoryRandonnee
 )
 
 puts 'All seeds are generated...'
