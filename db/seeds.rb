@@ -173,11 +173,7 @@ Event.create!(
   event_date: '2023-08-12',
   limit_participants: 10,
   user: user1,
-<<<<<<< HEAD
   category: categoryArtisanat
-=======
-  category: categoryCuisine
->>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -191,11 +187,7 @@ Event.create!(
   event_date: '2023-02-12',
   limit_participants: 5,
   user: user2,
-<<<<<<< HEAD
-  category: categoryCinema
-=======
   category: categoryArtisanat
->>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -209,11 +201,7 @@ Event.create!(
   event_date: '2023-01-12',
   limit_participants: 18,
   user: user3,
-<<<<<<< HEAD
-  category: categoryLecture
-=======
   category: categoryLangues
->>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -249,11 +237,7 @@ Event.create!(
   event_date: '2023-04-12',
   limit_participants: 20,
   user: user5,
-<<<<<<< HEAD
-  category: categoryDanse
-=======
   category: categoryCinema
->>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -273,11 +257,7 @@ Event.create!(
   event_date: '2023-03-12',
   limit_participants: 30,
   user: user1,
-<<<<<<< HEAD
-  category: categoryPhotographie
-=======
   category: categoryDanse
->>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 Event.create!(
@@ -299,11 +279,7 @@ Event.create!(
   event_date: '2023-10-12',
   limit_participants: 12,
   user: user3,
-<<<<<<< HEAD
-  category: categoryRandonnee
-=======
   category: categoryPhotographie
->>>>>>> d942313487f34f812bf9e4a1032556bb5574b4cb
 )
 
 puts 'All seeds are generated...'
