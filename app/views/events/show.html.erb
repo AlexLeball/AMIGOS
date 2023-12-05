@@ -20,7 +20,7 @@
       <% end %>
     </div>
 
-    <p class="card-category-title"><%= @event.category.name.upcase %></p>
+    <p class="card-category-title category-event"><%= @event.category.name.upcase %></p>
     <h1 class="page-title"><%= @event.title %></h1>
     <div class="bg-image-event"></div>
     <div class="event-bloc">
@@ -28,10 +28,40 @@
       <%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary-no-shadow a-style margin-event" %>
 
     <h2 class="subtitle">Informations générales</h2>
-      <p class="small-infos margin-event"><%= @event.address %></p>
-      <p class="description margin-event"><%= @event.limit_participants %></p>
-      <p class="small-infos margin-event"><%= @event.city %></p>
-      <p class="small-infos margin-event"><%= @event.event_date %></p>
+
+      <div class="calendar-event">
+        <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356565/card-calendar_bmkf1v.svg" alt="">
+        <div>
+          <p class="small-infos margin-text-event"><strong>Prochaine session :</strong></p>
+          <p class="small-infos margin-text-event"><%= l(@event.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
+        </div>
+      </div>
+
+      <div class="map-event">
+        <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356564/card-pin_olzpve.svg" alt="">
+        <div class="address">
+          <p class="small-infos margin-text-event"><strong>Adresse :</strong></p>
+          <p class="small-infos margin-text-event"><%= @event.address %></p>
+          <p class="small-infos margin-text-event"><%= @event.city %></p>
+        </div>
+      </div>
+
+      <div class="participants-event">
+        <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356749/card-participants_n7yaje.svg" alt="">
+        <p class="small-infos margin-text-event">
+          <% if @event.participants_count != nil %>
+            Places occupées : <strong><%= @event.participants_count %></strong> /
+          <% else %>
+            Places occupées : <strong>0</strong> /
+          <% end %>
+
+          <% if @event.limit_participants == -1 %>
+            Illimité
+          <% else %>
+            <%= @event.limit_participants %>
+          <% end %>
+        </p>
+      </div>
 
     <h2 class="subtitle">Description de l'événement</h2>
       <p class="description margin-event"><%= @event.long_description %></p>
@@ -45,3 +75,5 @@
       <%= link_to 'edit', edit_event_path(@event) %>
     <% end %>
 </div>
+
+<div class="empty-container-80"></div>

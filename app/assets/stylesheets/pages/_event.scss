@@ -38,6 +38,10 @@
   margin-right: 40px;
 }
 
+.margin-text-event {
+  margin-left: 10px;
+}
+
 .event-bloc {
   height: 100%;
 }
@@ -48,4 +52,48 @@
 
 .display_none{
   display: none;
+}
+
+.calendar-event {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 40px;
+  margin-left: 40px;
+  align-items: flex-start;
+
+  img {
+    margin-top: 3px;
+  }
+}
+
+.map-event {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 40px;
+  margin-left: 40px;
+  align-items: flex-start;
+
+  img {
+    margin-top: 3px;
+  }
+
+  .address {
+    display: block;
+  }
+}
+
+.participants-event {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 30px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.category-event {
+  margin-left: 40px;
 }
