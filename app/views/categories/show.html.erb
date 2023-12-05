@@ -7,7 +7,7 @@
       <p>retour</p>
     <% end %>
   </div>
-      <h1 class="page-title"><%= @category.name %></h1>
+      <h1 class="page-title"><%= @category.name.capitalize %></h1>
       <%= cl_image_tag @category.photo.key, height: 225, width: 500, crop: :fill, class:"category-image" %>
       <p class="chapo margin-event"><%= "Retrouvez ci-dessous tous les événements liés à la catégorie “#{@category.name}”" %></p>
 
