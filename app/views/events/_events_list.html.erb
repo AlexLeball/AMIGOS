@@ -37,7 +37,12 @@
 
  <div class="participants">
       <p class="small-infos">
-        Places occupées: <strong><%= event.participants_count %></strong> /
+        <% if event.participants_count != nil %>
+          Places occupées : <strong><%= event.participants_count %></strong> /
+        <% else %>
+          Places occupées : <strong>0</strong> /
+        <% end %>
+
         <% if event.limit_participants == -1 %>
           Illimité
         <% else %>
