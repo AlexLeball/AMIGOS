@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
 
     if @registration.save
       @event.increment!(:participants_count)
-      redirect_to events_path
+      redirect_to confirmation_event_registration_path(params[:event_id], @registration.id)
     else
       render :new
     end
@@ -32,6 +32,9 @@ class RegistrationsController < ApplicationController
   def reject
     Registration.update(status: "rejetée")
     redirect_to events_path(@event)
+  end
+
+  def confirmation
   end
 
 private
