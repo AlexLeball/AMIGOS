@@ -1,28 +1,23 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from 'mapbox-gl'
-
 export default class extends Controller {
   static targets = ["mapContainer", "mapButton", "mapPartial"]
   static values = {
     apiKey: String,
     markers: Array
   }
-
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
-
     })
     this.addMarkersToMap()
     this.fitMapToMarkers()
   }
-
   // showMap() {
   //   this.mapTarget.classList.remove("display_none")
   // }
-
   addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       new mapboxgl.Marker()
@@ -30,7 +25,6 @@ export default class extends Controller {
         .addTo(this.map)
     })
   }
-
   fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
