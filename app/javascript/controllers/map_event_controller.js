@@ -8,6 +8,10 @@ export default class extends Controller {
     markers: Array
   }
 
+  connect() {
+    this.loadMap()
+  }
+
   loadMap() {
     mapboxgl.accessToken = this.apiKeyValue
 
