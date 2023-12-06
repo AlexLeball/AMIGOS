@@ -1,21 +1,34 @@
 <%= render partial: 'header' %>
-
-<div class="event-window">
-  <div class="header-back">
-    <%= link_to events_path do %>
-      <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
-      <p>retour</p>
-    <% end %>
-  </div>
-
-  <p class="card-category-title"><%= @event.category.name.upcase %></p>
-  <h1 class="page-title"><%= @event.title %></h1>
-  <div class="bg-image-event"></div>
-
-  <div class="event-bloc">
-    <p class="chapo margin-event"><%= @event.short_description %></p>
-    <p class="small-infos margin-event" id="event-address"><%= @event.address %></p>
-
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.csv" rel="stylesheet">
+<div class="event-window" >
+    <div class="header-back">
+      <%= link_to events_path do %>
+        <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg">
+        <p>retour</p>
+      <% end %>
+    </div>
+    <p class="card-category-title category-event"><%= @event.category.name.upcase %></p>
+    <h1 class="page-title"><%= @event.title %></h1>
+    <div class="bg-image-event"></div>
+    <div class="event-bloc">
+      <p class="chapo margin-event"><%= @event.short_description %></p>
+      <%= link_to "Rejoindre cet événement", new_event_registration_path(@event), class: 'button-primary-no-shadow a-style margin-event' %>
+    <h2 class="subtitle">Informations générales</h2>
+      <div class="calendar-event">
+        <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356565/card-calendar_bmkf1v.svg" alt="">
+        <div>
+          <p class="small-infos margin-text-event"><strong>Prochaine session :</strong></p>
+          <p class="small-infos margin-text-event"><%= l(@event.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
+        </div>
+      </div>
+      <div class="map-event">
+        <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356564/card-pin_olzpve.svg" alt="">
+        <div class="address">
+          <p class="small-infos margin-text-event"><strong>Adresse :</strong></p>
+          <p class="small-infos margin-text-event"><%= @event.address %></p>
+          <p class="small-infos margin-text-event"><%= @event.city %></p>
+        </div>
+      </div>
     <!-- Map Section -->
     <div class="mapShow">
       <div id="mapContainer" style="width: 100%; height: 0;"
@@ -41,3 +54,31 @@
       </script>
     </div>
 
+      <div class="participants-event">
+        <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356749/card-participants_n7yaje.svg" alt="">
+        <p class="small-infos margin-text-event">
+          <% if @event.participants_count != nil %>
+            Places occupées : <strong><%= @event.participants_count %></strong> /
+          <% else %>
+            Places occupées : <strong>0</strong> /
+          <% end %>
+          <% if @event.limit_participants == -1 %>
+            Illimité
+          <% else %>
+            <%= @event.limit_participants %>
+          <% end %>
+        </p>
+      </div>
+    <h2 class="subtitle">Description de l'événement</h2>
+      <p class="description margin-event mt-3"><%= @event.long_description %></p>
+    </div>
+    <div class="margin-event">
+      <% if current_user == @event.user %>
+        <%= link_to "Supprimer", event_path(@event), data: { turbo_method: :delete }, class: "button-primary-no-margin a-style" %>
+      <% end %>
+      <% if current_user == @event.user %>
+        <%= link_to "Modifier", edit_event_path(@event), class: "button-ternary a-style" %>
+      <% end %>
+    </div>
+</div>
+<div class="empty-container-80"></div>
