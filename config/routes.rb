@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'my_profile', to: 'users#show'
   get 'edit_my_profile', to: 'users#edit'
   patch 'update_my_profile', to: 'users#update'
+  get '/confirmation', to: 'pages#confirmation'
 
   resources :categories, only: [:index, :show]
   resources :users
