@@ -20,7 +20,6 @@ class EventsController < ApplicationController
   def show
     @markers = []
     @event = Event.find(params[:id])
-
     @events = Event.all
     @events.geocoded.map do |event|
       if event == @event

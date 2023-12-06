@@ -8,6 +8,10 @@ export default class extends Controller {
     markers: Array
   }
 
+  connect() {
+    this.loadMap()
+  }
+
   loadMap() {
     mapboxgl.accessToken = this.apiKeyValue
 
@@ -17,11 +21,6 @@ export default class extends Controller {
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
-  }
-
-  toggleMap() {
-    // You can add any additional logic here if needed
-    this.element.dispatchEvent(new Event('mapToggle'));
   }
 
   #addMarkersToMap() {
