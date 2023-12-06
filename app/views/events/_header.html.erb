@@ -1,7 +1,7 @@
 <div class="header">
   <div class="profile-header">
-    <%= link_to my_profile_path, class: "card-click" do %>
-    <%= cl_image_tag current_user.photo.key, height: 36, width: 36, crop: :fill %>
+    <%= link_to my_profile_path do %>
+    <%= cl_image_tag current_user.photo.key, height: 36, width: 36, crop: :fill, class: "avatar-header" %>
     <p class="profile-firstname">Bonjour <%= current_user.first_name %></p>
     <% end %>
 <div class="search">
