@@ -19,6 +19,11 @@ export default class extends Controller {
     this.#fitMapToMarkers()
   }
 
+  toggleMap() {
+    // You can add any additional logic here if needed
+    this.element.dispatchEvent(new Event('mapToggle'));
+  }
+
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       new mapboxgl.Marker()
