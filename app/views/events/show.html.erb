@@ -29,6 +29,7 @@
           <p class="small-infos margin-text-event"><%= @event.city %></p>
         </div>
       </div>
+
     <!-- Map Section -->
     <div class="mapShow">
       <div id="mapContainer" style="width: 100%; height: 0;"
@@ -45,10 +46,6 @@
 
           mapButton.addEventListener("click", function() {
             mapContainer.style.height = (mapContainer.style.height === "0px") ? "600px" : "0";
-            // Trigger the map loading logic if needed
-            if (mapContainer.style.height === "600px") {
-              mapContainer.dispatchEvent(new Event('mapShown'));
-            }
           });
         });
       </script>
