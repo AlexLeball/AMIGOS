@@ -1,0 +1,46 @@
+<%= simple_form_for [event] do |f| %>
+  <%= f.input :title,
+              autofocus: true,
+              required: true,
+              label: "Titre",
+              error: 'Merci de préciser votre titre' %>
+  <%= f.input :address,
+              label: "Adresse",
+              required: true,
+              error: 'Merci de préciser votre adresse' %>
+  <%= f.input :city,
+              label: "Ville",
+              required: true,
+              error: 'Merci de préciser votre ville' %>
+  <%= f.input :short_description,
+              label: "Description courte",
+              placeholder: 'Résumez votre événement en 1 phrase',
+              as: :text, input_html: { data: { }, class: "short-input-field" },
+              required: true,
+              error: 'Merci de préciser votre description' %>
+  <%= f.input :long_description,
+              label: "Description longue",
+              placeholder: 'Décrivez en détail votre événement',
+              as: :text, input_html: { data: { }, class: "input-field" },
+              error: 'Merci de préciser votre description' %>
+  <%= f.input :event_date,
+              label: "Date de l'événement",
+              required: true,
+              as: :date %>
+  <%= f.input :limit_participants,
+              required: true,
+              label: "Nombre de participants maximum" %>
+  <%= f.input :category_id,
+              as: :check_boxes,
+              collection: Category.all.map { |category| [category.name, category.id] },
+              label: 'Choisissez au moins trois catégories :',
+              input_html: { class: "tag-selector" },
+              item_wrapper_class: 'tag-item' %>
+  <%= f.input :photo,
+              required: true,
+              label: "Ajouter une photo",
+              as: :file %>
+  <%= f.button :submit,
+              "Créer l'événement",
+              class: "button-primary-register-no-margin a-style margin60" %>
+<% end %>

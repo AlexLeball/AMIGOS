@@ -19,10 +19,8 @@
                   input_html: { autocomplete: "current-password" } %>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
-
     <div class="form-actions">
       <%= f.button :submit, "Se connecter", class: "button-primary-register a-style" %>
-      <div class="underline-grey"></div>
       <%= render "devise/shared/links" %>
     </div>
   <% end %>
