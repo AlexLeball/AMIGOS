@@ -93,3 +93,27 @@ p {
   font-weight: 700;
   line-height: normal;
 }
+
+.regular {
+  color: #060108;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 185.714% */
+}
+
+.regular-bold a {
+  color: #060108;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px; /* 185.714% */
+  text-decoration: none;
+}
+
+.link-style {
+  margin-top: 30px;
+  text-decoration: none;
+}

@@ -31,8 +31,10 @@
 <div class="form-container">
   <h2 class="page-title-no-margin margin60">Vos favoris</h2>
   <% @favorite_events.each do |favorite| %>
-    <p><strong><%= link_to favorite.title, event_path(favorite)%></strong></p>
-    <p>Prochaine session: <%= favorite.event_date %></p>
+    <%= link_to event_path(favorite), class: "link-style" do %>
+      <p class="regular-bold"><%= favorite.title %></p>
+      <p class="regular">Prochaine session : <%= favorite.event_date %></p>
+    <% end %>
   <% end %>
 </div>
 
