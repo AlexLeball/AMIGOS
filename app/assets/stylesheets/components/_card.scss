@@ -23,16 +23,29 @@
   font-weight: 500;
   line-height: 26px;
   margin-top: 6px;
+  padding-bottom: 50px;
 }
 
 .small-infos {
   color: #000;
   font-family: Raleway;
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 26px;
   margin-bottom: 0;
+}
+
+.map-link {
+  color: #000;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+  margin-bottom: 0;
+  margin-left: 64px;
+  border: none;
 }
 
 .card-click {
