@@ -38,6 +38,10 @@
 .card-click {
   text-decoration: none;
   display: contents;
+
+  img {
+    border-radius: 18px;
+  }
 }
 
 .card-category, .card-category-title {
