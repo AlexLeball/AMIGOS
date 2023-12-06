@@ -193,3 +193,15 @@
   text-decoration: none;
   color: $amigos-grey-medium;
 }
+
+.scroll-to-top-link {
+  float: right; /* Posiziona l'elemento a destra */
+  margin-right: 15px; /* Aggiunge spazio a sinistra dell'elemento */
+}
+
+/* Pulizia del float per evitare problemi di layout */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
