@@ -14,6 +14,10 @@
 <div class="underline"></div>
 
 <div class="form-container">
+  <h2 class="page-title-no-margin margin60">Vos événements</h2>
+</div>
+
+<div class="form-container">
   <h2 class="page-title-no-margin margin60">Vos événements à valider</h2>
   <% @your_own_events.each do |event| %>
     <% unless event.registrations.empty? %>
@@ -33,7 +37,7 @@
   <% @favorite_events.each do |favorite| %>
     <%= link_to event_path(favorite), class: "link-style" do %>
       <p class="regular-bold"><%= favorite.title %></p>
-      <p class="regular">Prochaine session : <%= favorite.event_date %></p>
+      <p class="regular">Prochaine session : <%= l(favorite.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
     <% end %>
   <% end %>
 </div>
