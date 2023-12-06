@@ -86,12 +86,12 @@ categoryCuisine = Category.new(name: "cuisine")
 categoryCuisine.photo.attach(io: cuisine, filename: "cuisine.jpg", content_type: "image/png")
 categoryCuisine.save
 
-lecture = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790375/lecture_gdpj9y.jpg")
+lecture = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701857726/lecture01_y6vnam.png")
 categoryLecture = Category.new(name: "lecture")
 categoryLecture.photo.attach(io: lecture, filename: "lecture.jpg", content_type: "image/png")
 categoryLecture.save
 
-artisanat = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790373/artisanat_vkncac.jpg")
+artisanat = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701857726/artisanat01_alnyt2.png")
 categoryArtisanat = Category.new(name: "artisanat")
 categoryArtisanat.photo.attach(io: artisanat, filename: "artisanat.jpg", content_type: "image/png")
 categoryArtisanat.save
@@ -101,12 +101,12 @@ categoryYoga = Category.new(name: "yoga")
 categoryYoga.photo.attach(io: yoga, filename: "yoga.jpg", content_type: "image/png")
 categoryYoga.save
 
-randonnee = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790375/randonnee_r2fuih.jpg")
+randonnee = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701857726/randonnee01_w6wwto.png")
 categoryRandonnee = Category.new(name: "randonnee")
 categoryRandonnee.photo.attach(io: randonnee, filename: "randonnee.jpg", content_type: "image/png")
 categoryRandonnee.save
 
-langues = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790374/langues_guuohj.jpg")
+langues = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701857726/language01_qlxryt.png")
 categoryLangues = Category.new(name: "langues")
 categoryLangues.photo.attach(io: langues, filename: "langues.jpg", content_type: "image/png")
 categoryLangues.save
@@ -131,7 +131,7 @@ categoryTheatre = Category.new(name: "theatre")
 categoryTheatre.photo.attach(io: theatre, filename: "theatre.jpg", content_type: "image/png")
 categoryTheatre.save
 
-cinema = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/c_scale,w_1000/v1701790373/cinema_qnpyyh.jpg")
+cinema = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701857726/cinema01_hy4yhs.png")
 categoryCinema = Category.new(name: "cinéma")
 categoryCinema.photo.attach(io: cinema, filename: "cinema.jpg", content_type: "image/png")
 categoryCinema.save
