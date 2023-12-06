@@ -79,6 +79,20 @@ user6 = User.create!(
   creator: false
 )
 
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701859691/sylvie-brunet_h4nj4z.png")
+sylvie = User.new(
+  email: 'sylvie@sfr.fr',
+  password: 'password123',
+  first_name: 'Sylvie',
+  last_name: 'Martin',
+  birth_date: '1927-01-01',
+  description: 'Je suis une passionnée de chevaux et de randonnées natures',
+  city: 'Saint Malo',
+  creator: false
+)
+sylvie.photo.attach(io: photo, filename: "sylvie.jpg", content_type: "image/png")
+sylvie.save
+
 puts 'Creating categories...'
 
 cuisine = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701792616/cooking_2_sheo3g.png")

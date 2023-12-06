@@ -1,8 +1,8 @@
 <div class="header">
   <div class="profile-header">
     <%= link_to my_profile_path, class: "card-click" do %>
-      <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701338864/fsca4rlcmf2bsmk3jbyq.png" alt="">
-      <p class="profile-firstname">Bonjour <%= current_user.first_name %></p>
+    <%= cl_image_tag current_user.photo.key, height: 36, width: 36, crop: :fill %>
+    <p class="profile-firstname">Bonjour <%= current_user.first_name %></p>
     <% end %>
 <div class="search">
   <div data-controller="search">
