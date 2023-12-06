@@ -11,10 +11,12 @@
   <%= render "users/form", user: @user, event: @event %>
 </div>
 
-<div class="underline"></div>
-
 <div class="form-container">
   <h2 class="page-title-no-margin margin60">Vos événements</h2>
+    <% @your_own_events.each do |event| %>
+      <p class="regular-bold"><%= event.title %></p>
+      <p class="regular">Prochaine session : <%= l(event.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
+    <% end %>
 </div>
 
 <div class="form-container">
@@ -42,5 +44,4 @@
   <% end %>
 </div>
 
-<%= link_to 'Vos événements', event_registrations_path(@registrations) %>
-<%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete } %>
+<%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete }, class: "button-deconnexion" %>
