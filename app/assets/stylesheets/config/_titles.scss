@@ -27,8 +27,17 @@ a {
   font-weight: 900;
   line-height: 32px; /* 128% */
   text-align: left;
-  margin-top: 40px;
   margin-left: 40px;
+}
+
+.page-title-no-margin {
+  color: #000;
+  font-family: Raleway;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 32px; /* 128% */
+  text-align: left;
 }
 
 .categories {
@@ -43,7 +52,15 @@ a {
   margin-left: 40px;
 }
 
-h2 {
+.subtitle {
+  color: #000;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 30px;
+  margin-left: 40px;
+  margin-top: 30px;
 }
 
 h3 {

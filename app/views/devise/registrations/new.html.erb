@@ -5,6 +5,8 @@
   <% end %>
 </div>
 
+<div class="empty-container-40"></div>
+
 <h1 class="page-title">Créez votre compte</h1>
 
 <div class="form-container">
@@ -49,7 +51,7 @@
       <%= f.input :user_categories,
            as: :check_boxes,
            collection: Category.all.map { |category| [category.name, category.id] },
-           label: 'Choisissez au moins trois catégories',
+           label: 'Choisissez au moins trois catégories :',
            input_html: { class: "tag-selector" },
            item_wrapper_class: 'tag-item' %>
 
@@ -60,3 +62,5 @@
     </div>
   <% end %>
 </div>
+
+<div class="empty-container-40"></div>

@@ -1,20 +1,29 @@
-<h2>Log in</h2>
+<div class="header-back">
+  <%= link_to root_path do %>
+    <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
+    <p>retour</p>
+  <% end %>
+</div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+<h2 class="page-title margin60">Connexion</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+<div class="form-container">
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="form-actions">
+      <%= f.button :submit, "Se connecter", class: "button-primary-register a-style" %>
+      <div class="underline-grey"></div>
+      <%= render "devise/shared/links" %>
+    </div>
+  <% end %>
+</div>
