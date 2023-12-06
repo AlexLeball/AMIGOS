@@ -1,47 +1,11 @@
-<h1>Create your event</h1>
+<div class="header-back">
+  <%= link_to root_path do %>
+    <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
+    <p>retour</p>
+  <% end %>
+</div>
 
-<%= form_for @event do |f| %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
-
-  <div class="field">
-    <%= f.label :short_description %>
-    <%= f.text_field :short_description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :long_description %>
-    <%= f.text_area :long_description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :event_date %>
-    <%= f.date_field :event_date %>
-  </div>
-
-  <div class="field">
-    <%= f.label :limit_participants %>
-    <%= f.number_field :limit_participants %>
-  </div>
-
-  <div class="field">
-    <%= f.label :category_id %>
-    <%= f.collection_select :category_id, Category.all, :id, :name %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit 'Create event' %>
-  </div>
-<% end %>
+<h2 class="page-title margin60">Créez votre événement</h2>
+<div class="form-container">
+  <%= render partial: 'form', locals: { event: @event } %>
+</div>
