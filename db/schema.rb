@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_04_143136) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_05_154757) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -95,6 +95,17 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_143136) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.string "message"
+    t.boolean "read_status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_notifications_on_event_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "registrations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
@@ -144,6 +155,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_143136) do
   add_foreign_key "favorites", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "notifications", "events"
+  add_foreign_key "notifications", "users"
   add_foreign_key "registrations", "events"
   add_foreign_key "registrations", "users"
   add_foreign_key "user_categories", "categories"
