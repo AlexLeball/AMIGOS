@@ -1,31 +1,37 @@
 import { Controller } from "@hotwired/stimulus"
-import mapboxgl from 'mapbox-gl'
+import mapboxgl from "mapbox-gl"
+// Connects to data-controller="map-event"
 export default class extends Controller {
-  static targets = ["mapContainer", "mapButton", "mapPartial"]
+  static targets = [ "btn" ]
   static values = {
     apiKey: String,
     markers: Array
   }
-  connect() {
+
+  loadMap() {
     mapboxgl.accessToken = this.apiKeyValue
+
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     })
-    this.addMarkersToMap()
-    this.fitMapToMarkers()
+    this.#addMarkersToMap()
+    this.#fitMapToMarkers()
   }
-  // showMap() {
-  //   this.mapTarget.classList.remove("display_none")
-  // }
-  addMarkersToMap() {
+
+  toggleMap() {
+    // You can add any additional logic here if needed
+    this.element.dispatchEvent(new Event('mapToggle'));
+  }
+
+  #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(this.map)
     })
   }
-  fitMapToMarkers() {
+  #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })

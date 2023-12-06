@@ -1,34 +1,19 @@
 <%= render partial: 'header' %>
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
-
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.csv" rel="stylesheet">
 <div class="event-window" >
-  <div data-controller="map" data-map-target="mapContainer">
-    <button id="show-map-link" data-action="click->map#showMap" data-map-target="mapButton">Show Map</button>
-    <div data-map-target="mapPartial">
-      <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-      </div>
-    </div>
-  </div>
-
     <div class="header-back">
       <%= link_to events_path do %>
-        <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
+        <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg">
         <p>retour</p>
       <% end %>
     </div>
-
     <p class="card-category-title category-event"><%= @event.category.name.upcase %></p>
     <h1 class="page-title"><%= @event.title %></h1>
     <div class="bg-image-event"></div>
     <div class="event-bloc">
       <p class="chapo margin-event"><%= @event.short_description %></p>
-      <%= link_to 'Rejoindre cet événement', new_event_registration_path(@event), class: "button-primary-no-shadow a-style margin-event" %>
-
+      <%= link_to "Rejoindre cet événement", new_event_registration_path(@event), class: 'button-primary-no-shadow a-style margin-event' %>
     <h2 class="subtitle">Informations générales</h2>
-
       <div class="calendar-event">
         <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356565/card-calendar_bmkf1v.svg" alt="">
         <div>
@@ -36,7 +21,6 @@
           <p class="small-infos margin-text-event"><%= l(@event.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
         </div>
       </div>
-
       <div class="map-event">
         <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356564/card-pin_olzpve.svg" alt="">
         <div class="address">
@@ -45,6 +29,30 @@
           <p class="small-infos margin-text-event"><%= @event.city %></p>
         </div>
       </div>
+    <!-- Map Section -->
+    <div class="mapShow">
+      <div id="mapContainer" style="width: 100%; height: 0;"
+        data-controller="map-event"
+        data-map-event-markers-value="<%= @markers.to_json %>"
+        data-map-event-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        <button data-map-event-target="btn" data-action="click->map-event#loadMap">Show Map</button>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const mapContainer = document.getElementById("mapContainer");
+          const mapButton = document.querySelector("[data-map-event-target='btn']");
+
+          mapButton.addEventListener("click", function() {
+            mapContainer.style.height = (mapContainer.style.height === "0px") ? "600px" : "0";
+            // Trigger the map loading logic if needed
+            if (mapContainer.style.height === "600px") {
+              mapContainer.dispatchEvent(new Event('mapShown'));
+            }
+          });
+        });
+      </script>
+    </div>
 
       <div class="participants-event">
         <img src="https://res.cloudinary.com/dn2p7hun2/image/upload/v1701356749/card-participants_n7yaje.svg" alt="">
@@ -54,7 +62,6 @@
           <% else %>
             Places occupées : <strong>0</strong> /
           <% end %>
-
           <% if @event.limit_participants == -1 %>
             Illimité
           <% else %>
@@ -62,20 +69,16 @@
           <% end %>
         </p>
       </div>
-
     <h2 class="subtitle">Description de l'événement</h2>
       <p class="description margin-event mt-3"><%= @event.long_description %></p>
     </div>
-
     <div class="margin-event">
       <% if current_user == @event.user %>
-        <%= link_to 'Supprimer', event_path(@event), data: { turbo_method: :delete }, class: "button-primary-no-margin a-style" %>
+        <%= link_to "Supprimer", event_path(@event), data: { turbo_method: :delete }, class: "button-primary-no-margin a-style" %>
       <% end %>
-
       <% if current_user == @event.user %>
-        <%= link_to 'Modifier', edit_event_path(@event), class: "button-ternary a-style" %>
+        <%= link_to "Modifier", edit_event_path(@event), class: "button-ternary a-style" %>
       <% end %>
     </div>
 </div>
-
 <div class="empty-container-80"></div>
