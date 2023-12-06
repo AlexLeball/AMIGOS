@@ -13,7 +13,8 @@ User.destroy_all
 
 puts 'Creating users...'
 
-user1 = User.create!(
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701859691/sylvie-brunet_h4nj4z.png")
+ahmed = User.new(
   email: 'Ahmed@example.com',
   password: 'password123',
   first_name: 'Ahmed',
@@ -23,6 +24,8 @@ user1 = User.create!(
   city: 'Tours',
   creator: false
 )
+ahmed.photo.attach(io: photo, filename: "ahmed.jpg", content_type: "image/png")
+ahmed.save
 
 user2 = User.create!(
   email: 'user2@example.com',
@@ -186,7 +189,7 @@ Event.create!(
   city: 'Nantes',
   event_date: '2023-08-12',
   limit_participants: 10,
-  user: user1,
+  user: ahmed,
   category: categoryArtisanat
 )
 
@@ -230,7 +233,7 @@ Event.create!(
   city: 'Le Mans',
   event_date: '2023-07-12',
   limit_participants: 35,
-  user: user1,
+  user: ahmed,
   category: categoryConcert
 )
 
@@ -270,7 +273,7 @@ Event.create!(
   city: 'Paris',
   event_date: '2023-03-12',
   limit_participants: 30,
-  user: user1,
+  user: ahmed,
   category: categoryDanse
 )
 
