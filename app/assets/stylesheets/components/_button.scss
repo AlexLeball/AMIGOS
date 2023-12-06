@@ -87,6 +87,16 @@
   padding-left: 20px;
 }
 
+.button-primary-register-no-margin {
+  border-radius: 10px;
+  color: white;
+  background-color: $amigos-green-primary;
+  height: 60px;
+  z-index: 999;
+  border: none;
+  width: 100%;
+  padding-left: 20px;
+}
 
 .button-secondary-search {
   border-radius: 10px;
@@ -103,8 +113,9 @@
 .button-ternary {
   display: block;
   border-radius: 10px;
-  color: $amigos-grey-medium;
-  border: 1px solid $amigos-grey-medium;
+  color: white;
+  // border: 1px solid $amigos-grey-medium;
+  background-color: black;
   height: 60px;
   padding-left: 20px;
   padding-top: 19px;
