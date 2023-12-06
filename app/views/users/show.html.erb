@@ -14,8 +14,8 @@
 <div class="form-container">
   <h2 class="page-title-no-margin margin60">Vos événements</h2>
     <% @your_own_events.each do |event| %>
-      <p class="regular-bold"><%= event.title %></p>
-      <p class="regular">Prochaine session : <%= l(event.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
+      <p class="card-title"><%= event.title %></p>
+      <p class="description">Prochaine session : <%= l(event.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
     <% end %>
 </div>
 
@@ -38,8 +38,8 @@
   <h2 class="page-title-no-margin margin60">Vos favoris</h2>
   <% @favorite_events.each do |favorite| %>
     <%= link_to event_path(favorite), class: "link-style" do %>
-      <p class="regular-bold"><%= favorite.title %></p>
-      <p class="regular">Prochaine session : <%= l(favorite.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
+      <p class="card-title"><%= favorite.title %></p>
+      <p class="description">Prochaine session : <%= l(favorite.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
     <% end %>
   <% end %>
 </div>
