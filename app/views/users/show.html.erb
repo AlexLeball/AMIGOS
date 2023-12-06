@@ -1,42 +1,40 @@
-<div>
-<h1>Vos informations</h1>
-  <div>
-    <%= render "users/form", user: @user, event: @event %>
-  </div>
-<br>
-  <div>
-  <h1>Vos événements à valider:</h1>
-  <% @your_own_events.each do |event| %>
-    <div>
-      <% unless event.registrations.empty? %>
-        <br>
-      <%= "#{event.title}" %>
-      <br>
-        <% event.registrations.each do |registration| %>
-          <%= "#{registration.user.first_name} a demandé à rejoindre cet événement" %>
-          <br>
-          <%= "La demande est #{registration.status}" %>
-          <br>
-          <%= link_to 'Accept', accept_event_registration_path(event, registration), data: { turbo_method: :patch }%>
-          <%= link_to 'Rejet', reject_event_registration_path(event, registration), data: { turbo_method: :patch } %>
-        <% end %>
-        <br>
-      <% end %>
-      <br>
-    </div>
-    <br>
+<div class="header-back">
+  <%= link_to events_path do %>
+    <%= image_tag "https://res.cloudinary.com/dn2p7hun2/image/upload/v1701342794/ubz1svndcbosxqlhqzaq.svg" %>
+    <p>retour</p>
   <% end %>
-  </div>
-  <div>
-  <h3>Vos favoris</h3>
-  <% @favorite_events.each do |favorite| %>
-    <div>
-      <p><strong><%= link_to favorite.title, event_path(favorite)%></strong></p>
-      <p>Prochaine session: <%= favorite.event_date %></p>
-    </div>
-  <% end %>
-  </div>
-
-  <%= link_to 'Vos événements', event_registrations_path(@registrations) %>
-  <%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete } %>
 </div>
+
+<h1 class="page-title margin60">Vos informations</h1>
+
+<div class="form-container">
+  <%= render "users/form", user: @user, event: @event %>
+</div>
+
+<div class="underline"></div>
+
+<div class="form-container">
+  <h2 class="page-title-no-margin margin60">Vos événements à valider</h2>
+  <% @your_own_events.each do |event| %>
+    <% unless event.registrations.empty? %>
+      <%= "#{event.title}" %>
+      <% event.registrations.each do |registration| %>
+        <%= "#{registration.user.first_name} a demandé à rejoindre cet événement" %>
+        <%= "La demande est #{registration.status}" %>
+        <%= link_to 'Accept', accept_event_registration_path(event, registration), data: { turbo_method: :patch }%>
+        <%= link_to 'Rejet', reject_event_registration_path(event, registration), data: { turbo_method: :patch } %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="form-container">
+  <h2 class="page-title-no-margin margin60">Vos favoris</h2>
+  <% @favorite_events.each do |favorite| %>
+    <p><strong><%= link_to favorite.title, event_path(favorite)%></strong></p>
+    <p>Prochaine session: <%= favorite.event_date %></p>
+  <% end %>
+</div>
+
+<%= link_to 'Vos événements', event_registrations_path(@registrations) %>
+<%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete } %>
