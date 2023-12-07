@@ -10,7 +10,7 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new(registration_params)
     @registration.user = current_user
     @registration.event = @event
-    @registration.status = "en attente"
+    @registration.status = "pending"
 
     if @registration.save
       @event.increment!(:participants_count)
@@ -25,12 +25,12 @@ class RegistrationsController < ApplicationController
   end
 
   def accept
-    Registration.update(status: "acceptée")
+    Registration.update(status: "accept")
     redirect_to events_path(@event)
   end
 
   def reject
-    Registration.update(status: "rejetée")
+    Registration.update(status: "reject")
     redirect_to events_path(@event)
   end
 
