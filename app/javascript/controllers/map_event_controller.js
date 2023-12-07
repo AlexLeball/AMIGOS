@@ -37,16 +37,4 @@ export default class extends Controller {
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 
-  toggleMap() {
-    this.
-    document.addEventListener("DOMContentLoaded", function() {
-      const mapContainer = document.getElementById("mapContainer");
-      const mapButton = document.querySelector("[data-map-event-target='btn']");
-
-      mapButton.addEventListener("click", function() {
-        mapContainer.style.height = (mapContainer.style.height === "0px") ? "300px" : "0";
-      });
-    });
-
-  }
 }
