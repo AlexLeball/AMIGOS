@@ -321,7 +321,7 @@ Event.create!(
   C'est également une opportunité de se rassembler, d'échanger et de partager des émotions avec d'autres passionnés de théâtre. La magie du spectacle en plein air crée une atmosphère de connexion et de partage entre les spectateurs.
 
   Rejoignez-nous pour une journée immersive dédiée à l'art théâtral en plein air. Réservez votre place pour l'événement Théâtre en Plein Air et laissez-vous transporter par la puissance des performances artistiques au cœur de la nature.",
-  address: '25 rue du Théâtre',
+  address: '25 rue de Moagador',
   city: 'Paris',
   event_date: '2023-11-15',
   limit_participants: 20,
@@ -344,7 +344,7 @@ Event.create!(
   C'est une occasion de se connecter avec la nature tout en appréciant l'art sous une forme nouvelle et inspirante. Rejoignez-nous pour cette expérience théâtrale en plein air, où la magie du spectacle rencontre la sérénité de la forêt.
 
   Réservez votre place pour le Spectacle Théâtral en Forêt et laissez-vous emporter par l'harmonie entre l'art dramatique et la nature environnante.",
-  address: 'Chemin des Bois, Parc National',
+  address: '4 Boulevard Jacques Saade',
   city: 'Marseille',
   event_date: '2023-12-08',
   limit_participants: 15,
@@ -367,7 +367,7 @@ Event.create!(
   En participant à ce marathon, vous aurez l'opportunité de rencontrer d'autres passionnés de course en montagne, de partager des expériences et de créer des liens au sein d'une communauté dynamique et motivante.
 
   Relevez le défi et rejoignez-nous pour une journée de sport, d'adrénaline et de dépassement de soi lors du Marathon de Montagne. Réservez votre place dès maintenant et préparez-vous à vivre une expérience sportive exceptionnelle.",
-  address: 'Station de ski Alpes du Sud',
+  address: '84 rue Nicholas Chorier',
   city: 'Grenoble',
   event_date: '2023-09-25',
   limit_participants: 200,
@@ -390,7 +390,7 @@ Event.create!(
   Cet atelier encourage l'expression individuelle à travers la photographie, offrant un espace où chacun peut capturer la beauté du monde qui l'entoure et créer des souvenirs inoubliables.
 
   Rejoignez-nous pour cette expérience enrichissante et créative. Réservez votre place pour l'Atelier de Photographie pour les Aînés et laissez votre passion pour la photographie s'épanouir.",
-  address: 'Centre Culturel des Aînés',
+  address: 'Rue izzet koç',
   city: 'Bordeaux',
   event_date: '2023-11-10',
   limit_participants: 15,
@@ -411,7 +411,7 @@ Event.create!(
   Nos sessions incluent des activités ludiques, des jeux de langage et des discussions thématiques pour encourager la pratique et l'apprentissage des langues de manière ludique et engageante.
 
   Rejoignez-nous pour une expérience linguistique enrichissante et amusante. Réservez votre place pour le Café des Langues et plongez dans un monde de diversité linguistique et culturelle.",
-  address: 'Bistro Polyglotte, Rue de la Langue',
+  address: '36 rue du bain aux plantes',
   city: 'Strasbourg',
   event_date: '2023-10-28',
   limit_participants: 30,
@@ -432,7 +432,7 @@ Event.create!(
   C'est également une opportunité de rencontrer des personnes partageant la même passion pour la lecture, d'échanger des recommandations de livres et de créer des liens autour de la littérature.
 
   Rejoignez-nous pour des moments riches en découvertes littéraires et en discussions animées. Réservez votre place au Club de Lecture et plongez dans l'univers fascinant des livres et des idées.",
-  address: 'Bibliothèque Littéraire, Rue des Livres',
+  address: '34 rue Edouard Delesalle',
   city: 'Lille',
   event_date: '2023-11-15',
   limit_participants: 20,
@@ -453,7 +453,7 @@ Event.create!(
   Après la session de cuisine, nous aurons le plaisir de déguster ensemble les plats préparés, favorisant ainsi les échanges et les conversations autour de la table, dans une ambiance conviviale et détendue.
 
   Rejoignez-nous pour une aventure culinaire captivante. Réservez votre place pour l'Atelier de Cuisine Méditerranéenne et laissez-vous enchanter par les saveurs ensoleillées de la Méditerranée.",
-  address: 'École de Cuisine Soleil, Rue des Saveurs',
+  address: '271 Boulevard du Mercantour',
   city: 'Nice',
   event_date: '2023-10-20',
   limit_participants: 15,
@@ -474,7 +474,7 @@ Event.create!(
   Nous fournissons tout le matériel nécessaire pour vous permettre de vous plonger pleinement dans cette expérience artistique enrichissante.
 
   Rejoignez-nous pour une journée dédiée à l'artisanat et à la créativité. Réservez votre place pour l'Atelier de Poterie Artisanale et découvrez le plaisir de créer des pièces uniques de poterie.",
-  address: 'Centre d\'Art Artisanal, Rue de l\'Artisanat',
+  address: '198 Rue Paradis',
   city: 'Marseille',
   event_date: '2023-11-15',
   limit_participants: 12,
@@ -497,7 +497,7 @@ Event.create!(
   Nous fournissons tous les outils nécessaires pour que vous puissiez exprimer votre talent et votre vision artistique lors de cette expérience enrichissante.
 
   Rejoignez-nous pour une journée dédiée à l'artisanat et à la création artistique. Réservez votre place pour l'Atelier de Création de Bijoux Artisanaux et laissez-vous inspirer par le monde fascinant de la bijouterie artisanale.",
-  address: 'Atelier d\'Art et de Création, Rue des Bijoux',
+  address: '13 rue du plat',
   city: 'Lyon',
   event_date: '2023-12-10',
   limit_participants: 10,
@@ -518,12 +518,12 @@ Event.create!(
   Cette randonnée est conçue pour créer une atmosphère détendue où les participants peuvent apprécier la beauté de la nature tout en prenant part à une activité physique modérée.
 
   Rejoignez-nous pour une matinée de détente et de découverte. Réservez votre place pour la Randonnée Douce et profitez d'une expérience de plein air adaptée aux seniors.",
-  address: 'Parc Naturel des Sénioriales, Avenue des Aînés',
+  address: '88 Boulevard de la Marquette',
   city: 'Toulouse',
   event_date: '2023-11-05',
   limit_participants: 20,
   user: user3,
-  category: categorySport,
+  category: categoryRandonnee,
   participants_count: 14,
 )
 
@@ -539,7 +539,7 @@ Event.create!(
   La journée comprendra plusieurs séances de projection, des pauses pour discuter des films et des moments de partage autour du cinéma. C'est une opportunité de se divertir, de socialiser et de revivre des moments forts du cinéma.
 
   Rejoignez-nous pour cette journée spéciale dédiée au cinéma classique. Réservez votre place pour la Projection de Classiques du Cinéma et replongez dans l'univers captivant des grands films d'hier.",
-  address: 'Centre Culturel du Cinéma, Rue du Cinéphile',
+  address: '20 rue de la Boétie',
   city: 'Paris',
   event_date: '2023-12-15',
   limit_participants: 30,
