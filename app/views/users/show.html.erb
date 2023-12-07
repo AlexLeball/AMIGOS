@@ -5,6 +5,9 @@
   <% end %>
 </div>
 
+<p class="big-title profile-placement">Profil</p>
+<%= cl_image_tag current_user.photo.key, height: 200, width: 500, crop: :fill %>
+
 <div class="form-container margin-60">
   <h2 class="page-title-no-margin margin60 margin-bottom40">Vos événements</h2>
     <% @your_own_events.each do |event| %>
