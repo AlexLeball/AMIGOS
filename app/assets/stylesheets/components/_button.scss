@@ -159,22 +159,14 @@
   display: block;
   color: rgb(34, 34, 34);
   text-decoration: none;
-  background-color: $amigos-grey-light;
+  background-color: $amigos-grey-enhanced;
   height: 60px;
   padding-left: 40px;
   padding-top: 19px;
   height: 60px;
   position: relative;
   z-index: 999;
-
-  a {
-    text-align: left;
-    text-decoration: none;
-    font-family: Raleway;
-    font-size: 16px;
-    font-weight: 900;
-    line-height: normal;
-  }
+  font-weight: 900;
 }
 
 // added class for categories in the registration page
