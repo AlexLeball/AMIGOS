@@ -160,7 +160,7 @@ categorySport.save
 
 puts 'Creating events...'
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948997/image_4_hu5ayp.png")
 pilates = Event.new(
   title: 'Séance de pilates avec la coach Stéphanie Martin',
   short_description: "Découvrez l'Équilibre et la Force Intérieure avec Stéphanie Martin et son cours de Pilates exceptionnel !",
@@ -197,7 +197,7 @@ pilates = Event.new(
 pilates.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
 pilates.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948853/image_6_hqbmyu.png")
 cuisine = Event.new(
   title: 'Cours de cuisine avec le chef étoilé Jean-Pierre Gauthier',
   short_description: 'Découvrez les secrets de la cuisine française avec le chef étoilé Jean-Pierre Gauthier',
@@ -215,7 +215,7 @@ cuisine = Event.new(
 cuisine.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
 cuisine.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948852/image_11_pfq3nd.png")
 yoga = Event.new(
   title: "Cours de yoga Harmonie et Sérénité",
   short_description: "Découvrez l\'harmonie et la sérénité avec le cours de yoga de la coach certifiée, Marie-Louise",
@@ -230,10 +230,10 @@ yoga = Event.new(
   category: categoryYoga,
   participants_count: 15
 )
-yoga.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+yoga.photo.attach(io: photo, filename: "yogaharmonie.jpg", content_type: "image/png")
 yoga.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948853/image_7_mxzfuj.png")
 concert = Event.new(
   title: 'Concert Classique Harmonies Intemporelle',
   short_description: "Vivez l'émotion de la musique classique lors de notre concert où s'entremêlent les chefs-d'œuvre intemporels interprétés par des musiciens virtuoses.",
@@ -250,10 +250,10 @@ concert = Event.new(
   category: categoryConcert,
   participants_count: 25
 )
-concert.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+concert.photo.attach(io: photo, filename: "concertharmonies.jpg", content_type: "image/png")
 concert.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948853/image_12_f9jnjf.png")
 cinema = Event.new(
   title: 'Cinéma Sous les Étoiles',
   short_description: 'Découvrez une expérience cinématographique unique sous le ciel étoilé, avec une sélection de films captivants et des moments magiques à partager en plein air.',
@@ -274,10 +274,10 @@ cinema = Event.new(
   category: categoryCinema,
   participants_count: 12
 )
-cinema.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+cinema.photo.attach(io: photo, filename: "cinémaetoiles.jpg", content_type: "image/png")
 cinema.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948853/image_8_nmgfxm.png")
 dansant = Event.new(
   title: 'Soirée Dansante Rythmes Envoûtants',
   short_description: "Plongez dans une soirée pleine de passion et de mouvements enivrants lors de notre événement dansant, où la musique enflamme le corps et l'esprit.",
@@ -298,10 +298,10 @@ dansant = Event.new(
   category: categoryDanse,
   participants_count: 25
 )
-dansant.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+dansant.photo.attach(io: photo, filename: "soireedansante.jpg", content_type: "image/png")
 dansant.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948854/image_5_joks69.png")
 randonnee = Event.new(
   title: "Randonnée Exploration Naturelle",
   short_description: "Partez à l'aventure lors de notre randonnée en pleine nature, découvrez des paysages enchanteurs et vivez des moments de connexion avec la nature.",
@@ -324,10 +324,10 @@ randonnee = Event.new(
   category: categoryRandonnee,
   participants_count: 10
 )
-randonnee.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+randonnee.photo.attach(io: photo, filename: "randonneenaturelle.jpg", content_type: "image/png")
 randonnee.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948853/image_12_f9jnjf.png")
 theatre = Event.new(
   title: "Théâtre en Plein Air",
   short_description: "Plongez dans l'univers magique du théâtre en plein air, vivez des performances captivantes et laissez-vous emporter par l'art dramatique au cœur de la nature.",
@@ -350,10 +350,10 @@ theatre = Event.new(
   category: categoryTheatre,
   participants_count: 14
 )
-theatre.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+theatre.photo.attach(io: photo, filename: "theatrepleinair.jpg", content_type: "image/png")
 theatre.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948853/image_12_f9jnjf.png")
 theatre_foret = Event.new(
   title: "Spectacle Théâtral en Forêt",
   short_description: "Plongez dans un spectacle théâtral unique en plein cœur de la nature, où les arbres deviennent le décor de performances magistrales.",
@@ -376,10 +376,10 @@ theatre_foret = Event.new(
   category: categoryTheatre,
   participants_count: 7
 )
-theatre_foret.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+theatre_foret.photo.attach(io: photo, filename: "theatraleforet.jpg", content_type: "image/png")
 theatre_foret.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701957931/cristina-gottardi-p5JVzahHku0-unsplash_ysblz2.jpg")
 marathon = Event.new(
   title: "Marathon de Montagne",
   short_description: "Participez à une aventure sportive intense lors de notre marathon en montagne, défiez vos limites et explorez des paysages à couper le souffle.",
@@ -402,10 +402,10 @@ marathon = Event.new(
   category: categorySport,
   participants_count: 138
 )
-marathon.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+marathon.photo.attach(io: photo, filename: "mountain.jpg", content_type: "image/png")
 marathon.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948852/image_13_nkvty0.png")
 photographie_atelier = Event.new(
   title: "Atelier de Photographie pour les Aînés",
   short_description: "Explorez l'art de la photographie lors d'un atelier dédié aux aînés, capturez des moments précieux et exprimez votre créativité à travers l'objectif.",
@@ -428,10 +428,10 @@ photographie_atelier = Event.new(
   category: categoryPhotographie,
   participants_count: 13
 )
-photographie_atelier.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+photographie_atelier.photo.attach(io: photo, filename: "photographiepapimami.jpg", content_type: "image/png")
 photographie_atelier.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701957930/kris-atomic-3b2tADGAWnU-unsplash_eevskz.jpg")
 cafe_langues = Event.new(
   title: "Café des Langues : Rencontres et Échanges Linguistiques",
   short_description: "Participez à notre Café des Langues pour pratiquer et améliorer vos compétences linguistiques, échangez avec d'autres passionnés de langues et découvrez de nouvelles cultures.",
@@ -452,10 +452,10 @@ cafe_langues = Event.new(
   category: categoryLangues,
   participants_count: 13
 )
-cafe_langues.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+cafe_langues.photo.attach(io: photo, filename: "cafèdelangues.jpg", content_type: "image/png")
 cafe_langues.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948854/image_1_cfxi7r.png")
 lecture_club = Event.new(
   title: "Club de Lecture : Découverte littéraire et Échanges",
   short_description: "Rejoignez notre Club de Lecture pour explorer des œuvres littéraires variées, partager vos impressions et discuter passionnément de livres avec d'autres amateurs de lecture.",
@@ -476,10 +476,10 @@ lecture_club = Event.new(
   category: categoryLecture,
   participants_count: 14
 )
-lecture_club.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+lecture_club.photo.attach(io: photo, filename: "clubdeleceture.jpg", content_type: "image/png")
 lecture_club.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948853/image_10_fbnavv.png")
 méditerranéenne = Event.new(
   title: "Atelier de Cuisine Méditerranéenne : Découverte des Saveurs",
   short_description: "Joignez-vous à notre atelier de cuisine pour explorer les délices de la cuisine méditerranéenne, apprenez de nouvelles recettes et dégustez des plats authentiques et savoureux.",
@@ -500,10 +500,10 @@ méditerranéenne = Event.new(
   category: categoryCuisine,
   participants_count: 5
 )
-méditerranéenne.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+méditerranéenne.photo.attach(io: photo, filename: "cuisinemediterannee.jpg", content_type: "image/png")
 méditerranéenne.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948997/image_9_odsrv9.png")
 poterie = Event.new(
   title: "Atelier de Poterie Artisanale : Création et Modelage",
   short_description: "Plongez dans l'art de la poterie artisanale, découvrez le modelage de l'argile et créez des pièces uniques avec nos artisans expérimentés.",
@@ -524,10 +524,10 @@ poterie = Event.new(
   category: categoryArtisanat,
   participants_count: 4
 )
-poterie.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+poterie.photo.attach(io: photo, filename: "poiteriearisanal.jpg", content_type: "image/png")
 poterie.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701957930/isaline-basle-LSAcHQtpg-8-unsplash_tgc3x3.jpg")
 bijoux = Event.new(
   title: "Atelier de Création de Bijoux Artisanaux",
   short_description: "Explorez l'art de la fabrication de bijoux artisanaux, créez vos propres pièces uniques et découvrez les techniques traditionnelles avec nos artisans experts.",
@@ -550,10 +550,10 @@ bijoux = Event.new(
   category: categoryArtisanat,
   participants_count: 7
 )
-bijoux.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+bijoux.photo.attach(io: photo, filename: "bijoux.jpg", content_type: "image/png")
 bijoux.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701957931/cristina-gottardi-p5JVzahHku0-unsplash_ysblz2.jpg")
 rando_douce = Event.new(
   title: "Randonnée Douce pour les Seniors",
   short_description: "Participez à notre randonnée adaptée aux seniors, découvrez la nature en douceur et profitez d'une balade relaxante en plein air.",
@@ -574,10 +574,10 @@ rando_douce = Event.new(
   category: categoryRandonnee,
   participants_count: 14,
 )
-rando_douce.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+rando_douce.photo.attach(io: photo, filename: "montagnaroooo.jpg", content_type: "image/png")
 rando_douce.save
 
-photo = URI.open("")
+photo = URI.open("https://res.cloudinary.com/dn2p7hun2/image/upload/v1701948854/image_2_uxlsi2.png")
 classiques = Event.new(
   title: "Projection de Classiques du Cinéma pour Séniors",
   short_description: "Rejoignez-nous pour une journée spéciale de projection de films classiques, une opportunité de se replonger dans des chefs-d'œuvre cinématographiques et de partager des souvenirs.",
@@ -598,7 +598,7 @@ classiques = Event.new(
   category: categoryCinema,
   participants_count: 19
 )
-classiques.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+classiques.photo.attach(io: photo, filename: "projectionclassique.jpg", content_type: "image/png")
 classiques.save
 
 puts 'All seeds are generated...'
