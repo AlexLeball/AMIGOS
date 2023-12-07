@@ -32,23 +32,15 @@
 
     <!-- Map Section -->
     <div class="mapShow" data-controller="toggle">
-      <button class="btn-map-toggle map-link" data-map-event-target="btn">Afficher la carte</button>
+      <button class="btn-map-toggle map-link"
+      data-map-event-target="btn"
+      data-action="click->toggle#fire">Afficher la carte</button>
       <div id="mapContainer" style="width: 100%; height: 0;"
+        data-toggle-target="togglableElement"
         data-controller="map-event"
         data-map-event-markers-value="<%= @markers.to_json %>"
         data-map-event-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-          const mapContainer = document.getElementById("mapContainer");
-          const mapButton = document.querySelector("[data-map-event-target='btn']");
-
-          mapButton.addEventListener("click", function() {
-            mapContainer.style.height = (mapContainer.style.height === "0px") ? "300px" : "0";
-          });
-        });
-      </script>
     </div>
 
       <div class="participants-event">
