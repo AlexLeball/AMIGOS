@@ -42,7 +42,7 @@ class EventsController < ApplicationController
     @event.user_id = current_user.id if current_user
 
     if @event.save
-      redirect_to events_path, notice: "Event created successfully."
+      redirect_to events_path, notice: "Evénement créé avec succès"
     else
       render 'new'
     end
@@ -51,7 +51,7 @@ class EventsController < ApplicationController
   def edit
     @event = Event.find(params[:id])
     if current_user != @event.user
-      redirect_to @event, alert: "You can't edit this event"
+      redirect_to @event, alert: "Impossible d'éditer cet événement"
     end
   end
 
@@ -59,7 +59,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     if current_user == @event.user
       @event.destroy
-      redirect_to events_path, notice: "Event deleted successfully."
+      redirect_to events_path, notice: "Evénement supprimé avec succès"
     end
   end
 
@@ -67,12 +67,12 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     if current_user == @event.user
       if @event.update(event_params)
-        redirect_to @event, notice: "Event updated successfully."
+        redirect_to @event, notice: "Evénement mis à jour avec succès."
       else
         render 'edit'
       end
     else
-      redirect_to @event, alert: "You can't edit this event because you are not the owner of the event."
+      redirect_to @event, alert: "Vous ne pouvez pas éditer cet événement car vous n'êtes pas son créateur"
     end
   end
 
