@@ -37,7 +37,7 @@
 }
 
 .form-control {
-  background-color: $amigos-grey-light;
+  background-color: $amigos-grey-enhanced;
   border-style: none;
   height: 40px;
   padding: 0.35rem 1rem;
@@ -57,4 +57,19 @@
   background-color: $amigos-grey-light;
   position: relative;
   top: -22px;
+}
+
+.registration-confirmation {
+  margin-bottom: 10px;
+}
+
+.form-select {
+  background-color: $amigos-grey-enhanced;
+}
+
+.accept-block {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
 }
