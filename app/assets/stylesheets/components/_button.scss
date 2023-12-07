@@ -110,6 +110,27 @@
   padding-left: 20px;
 }
 
+.button-secondary-accept {
+  border-radius: 10px;
+  background-color: rgb(195, 255, 195);
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: rgb(1, 82, 1);
+}
+
+.button-secondary-reject {
+  border-radius: 10px;
+  background-color: rgb(251, 193, 193);
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: rgb(115, 0, 0);
+}
+
+
 .button-ternary {
   display: block;
   border-radius: 10px;
