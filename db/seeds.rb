@@ -160,7 +160,8 @@ categorySport.save
 
 puts 'Creating events...'
 
-Event.create!(
+photo = URI.open("")
+pilates = Event.new(
   title: 'Séance de pilates avec la coach Stéphanie Martin',
   short_description: "Découvrez l'Équilibre et la Force Intérieure avec Stéphanie Martin et son cours de Pilates exceptionnel !",
   long_description: "Rejoignez-nous pour une expérience unique de bien-être et de renforcement musculaire avec le cours de Pilates animé par la talentueuse coach Stéphanie Martin.
@@ -193,8 +194,11 @@ Event.create!(
   category: categorySport,
   participants_count: 8
 )
+pilates.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+pilates.save
 
-Event.create!(
+photo = URI.open("")
+cuisine = Event.new(
   title: 'Cours de cuisine avec le chef étoilé Jean-Pierre Gauthier',
   short_description: 'Découvrez les secrets de la cuisine française avec le chef étoilé Jean-Pierre Gauthier',
   long_description: "Plongez dans l'univers exquis de la gastronomie française lors d'un cours de cuisine exclusif animé par le renommé chef étoilé, Jean-Pierre Gauthier. Cet événement captivant vous offre une opportunité exceptionnelle d'explorer les secrets culinaires de la haute cuisine française tout en vivant une expérience sensorielle inoubliable.
@@ -208,8 +212,11 @@ Event.create!(
   category: categoryCuisine,
   participants_count: 4
 )
+cuisine.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+cuisine.save
 
-Event.create!(
+photo = URI.open("")
+yoga = Event.new(
   title: "Cours de yoga Harmonie et Sérénité",
   short_description: "Découvrez l\'harmonie et la sérénité avec le cours de yoga de la coach certifiée, Marie-Louise",
   long_description: "Plongez dans un havre de paix intérieure lors de notre cours de yoga Harmonie et Sérénité. Venez découvrir une pratique du yoga qui va au-delà de la simple activité physique pour embrasser une approche holistique du bien-être mental, physique et spirituel.
@@ -223,8 +230,11 @@ Event.create!(
   category: categoryYoga,
   participants_count: 15
 )
+yoga.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+yoga.save
 
-Event.create!(
+photo = URI.open("")
+concert = Event.new(
   title: 'Concert Classique Harmonies Intemporelle',
   short_description: "Vivez l'émotion de la musique classique lors de notre concert où s'entremêlent les chefs-d'œuvre intemporels interprétés par des musiciens virtuoses.",
   long_description: "Plongez dans l'élégance et la grâce intemporelles de la musique classique lors de notre événement spécial : le concert Harmonies Intemporelles. Vivez une expérience immersive où les mélodies envoûtantes des grands compositeurs prennent vie dans un cadre enchanteur.
@@ -240,8 +250,11 @@ Event.create!(
   category: categoryConcert,
   participants_count: 25
 )
+concert.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+concert.save
 
-Event.create!(
+photo = URI.open("")
+cinema = Event.new(
   title: 'Cinéma Sous les Étoiles',
   short_description: 'Découvrez une expérience cinématographique unique sous le ciel étoilé, avec une sélection de films captivants et des moments magiques à partager en plein air.',
   long_description: "Bienvenue à notre événement cinématographique en plein air : Cinéma Sous les Étoiles. Préparez-vous à une immersion totale dans le monde magique du cinéma, tout en profitant d'une atmosphère envoûtante sous le ciel étoilé.
@@ -261,8 +274,11 @@ Event.create!(
   category: categoryCinema,
   participants_count: 12
 )
+cinema.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+cinema.save
 
-Event.create!(
+photo = URI.open("")
+dansant = Event.new(
   title: 'Soirée Dansante Rythmes Envoûtants',
   short_description: "Plongez dans une soirée pleine de passion et de mouvements enivrants lors de notre événement dansant, où la musique enflamme le corps et l'esprit.",
   long_description: "Bienvenue à notre soirée dansante Rythmes Envoûtants, une célébration de la danse, de la musique et de l'énergie contagieuse qui rassemble les passionnés de danse de tous horizons.
@@ -282,9 +298,11 @@ Event.create!(
   category: categoryDanse,
   participants_count: 25
 )
+dansant.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+dansant.save
 
-
-Event.create!(
+photo = URI.open("")
+randonnee = Event.new(
   title: "Randonnée Exploration Naturelle",
   short_description: "Partez à l'aventure lors de notre randonnée en pleine nature, découvrez des paysages enchanteurs et vivez des moments de connexion avec la nature.",
   long_description: "Bienvenue à notre randonnée Exploration Naturelle, une escapade immersive pour les amateurs de plein air et les passionnés de découverte de la nature.
@@ -306,8 +324,11 @@ Event.create!(
   category: categoryRandonnee,
   participants_count: 10
 )
+randonnee.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+randonnee.save
 
-Event.create!(
+photo = URI.open("")
+theatre = Event.new(
   title: "Théâtre en Plein Air",
   short_description: "Plongez dans l'univers magique du théâtre en plein air, vivez des performances captivantes et laissez-vous emporter par l'art dramatique au cœur de la nature.",
   long_description: "Bienvenue à notre événement Théâtre en Plein Air, une expérience immersive pour les amoureux du théâtre et de la nature.
@@ -329,8 +350,11 @@ Event.create!(
   category: categoryTheatre,
   participants_count: 14
 )
+theatre.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+theatre.save
 
-Event.create!(
+photo = URI.open("")
+theatre_foret = Event.new(
   title: "Spectacle Théâtral en Forêt",
   short_description: "Plongez dans un spectacle théâtral unique en plein cœur de la nature, où les arbres deviennent le décor de performances magistrales.",
   long_description: "Bienvenue à notre Spectacle Théâtral en Forêt, une expérience artistique et immersive qui fusionne l'art dramatique avec la beauté naturelle de la forêt.
@@ -352,8 +376,11 @@ Event.create!(
   category: categoryTheatre,
   participants_count: 7
 )
+theatre_foret.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+theatre_foret.save
 
-Event.create!(
+photo = URI.open("")
+marathon = Event.new(
   title: "Marathon de Montagne",
   short_description: "Participez à une aventure sportive intense lors de notre marathon en montagne, défiez vos limites et explorez des paysages à couper le souffle.",
   long_description: "Bienvenue au Marathon de Montagne, une épreuve sportive passionnante pour les adeptes de courses en pleine nature et les amoureux de défis.
@@ -375,8 +402,11 @@ Event.create!(
   category: categorySport,
   participants_count: 138
 )
+marathon.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+marathon.save
 
-Event.create!(
+photo = URI.open("")
+photographie_atelier = Event.new(
   title: "Atelier de Photographie pour les Aînés",
   short_description: "Explorez l'art de la photographie lors d'un atelier dédié aux aînés, capturez des moments précieux et exprimez votre créativité à travers l'objectif.",
   long_description: "Bienvenue à notre Atelier de Photographie pour les Aînés, une expérience dédiée à la découverte et à la pratique de la photographie pour les personnes âgées passionnées par cet art visuel.
@@ -398,8 +428,11 @@ Event.create!(
   category: categoryPhotographie,
   participants_count: 13
 )
+photographie_atelier.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+photographie_atelier.save
 
-Event.create!(
+photo = URI.open("")
+cafe_langues = Event.new(
   title: "Café des Langues : Rencontres et Échanges Linguistiques",
   short_description: "Participez à notre Café des Langues pour pratiquer et améliorer vos compétences linguistiques, échangez avec d'autres passionnés de langues et découvrez de nouvelles cultures.",
   long_description: "Bienvenue au Café des Langues, un événement convivial dédié à la pratique des langues étrangères et à la découverte interculturelle.
@@ -419,8 +452,11 @@ Event.create!(
   category: categoryLangues,
   participants_count: 13
 )
+cafe_langues.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+cafe_langues.save
 
-Event.create!(
+photo = URI.open("")
+lecture_club = Event.new(
   title: "Club de Lecture : Découverte littéraire et Échanges",
   short_description: "Rejoignez notre Club de Lecture pour explorer des œuvres littéraires variées, partager vos impressions et discuter passionnément de livres avec d'autres amateurs de lecture.",
   long_description: "Bienvenue au Club de Lecture, un espace dédié aux amoureux des livres et de la littérature, où la découverte, la réflexion et le partage autour des œuvres littéraires sont mis à l'honneur.
@@ -440,8 +476,11 @@ Event.create!(
   category: categoryLecture,
   participants_count: 14
 )
+lecture_club.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+lecture_club.save
 
-Event.create!(
+photo = URI.open("")
+méditerranéenne = Event.new(
   title: "Atelier de Cuisine Méditerranéenne : Découverte des Saveurs",
   short_description: "Joignez-vous à notre atelier de cuisine pour explorer les délices de la cuisine méditerranéenne, apprenez de nouvelles recettes et dégustez des plats authentiques et savoureux.",
   long_description: "Bienvenue à notre Atelier de Cuisine Méditerranéenne, une expérience gustative et culturelle dédiée à la découverte des saveurs ensoleillées de la Méditerranée.
@@ -461,8 +500,11 @@ Event.create!(
   category: categoryCuisine,
   participants_count: 5
 )
+méditerranéenne.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+méditerranéenne.save
 
-Event.create!(
+photo = URI.open("")
+poterie = Event.new(
   title: "Atelier de Poterie Artisanale : Création et Modelage",
   short_description: "Plongez dans l'art de la poterie artisanale, découvrez le modelage de l'argile et créez des pièces uniques avec nos artisans expérimentés.",
   long_description: "Bienvenue à notre Atelier de Poterie Artisanale, une immersion dans l'univers créatif de la poterie et du modelage de l'argile.
@@ -482,8 +524,11 @@ Event.create!(
   category: categoryArtisanat,
   participants_count: 4
 )
+poterie.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+poterie.save
 
-Event.create!(
+photo = URI.open("")
+bijoux = Event.new(
   title: "Atelier de Création de Bijoux Artisanaux",
   short_description: "Explorez l'art de la fabrication de bijoux artisanaux, créez vos propres pièces uniques et découvrez les techniques traditionnelles avec nos artisans experts.",
   long_description: "Bienvenue à notre Atelier de Création de Bijoux Artisanaux, une expérience immersive pour les passionnés de bijouterie artisanale et de création artistique.
@@ -505,8 +550,11 @@ Event.create!(
   category: categoryArtisanat,
   participants_count: 7
 )
+bijoux.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+bijoux.save
 
-Event.create!(
+photo = URI.open("")
+rando_douce = Event.new(
   title: "Randonnée Douce pour les Seniors",
   short_description: "Participez à notre randonnée adaptée aux seniors, découvrez la nature en douceur et profitez d'une balade relaxante en plein air.",
   long_description: "Bienvenue à notre Randonnée Douce spécialement conçue pour les seniors en quête d'une expérience de plein air adaptée et relaxante.
@@ -526,8 +574,11 @@ Event.create!(
   category: categoryRandonnee,
   participants_count: 14,
 )
+rando_douce.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+rando_douce.save
 
-Event.create!(
+photo = URI.open("")
+classiques = Event.new(
   title: "Projection de Classiques du Cinéma pour Séniors",
   short_description: "Rejoignez-nous pour une journée spéciale de projection de films classiques, une opportunité de se replonger dans des chefs-d'œuvre cinématographiques et de partager des souvenirs.",
   long_description: "Bienvenue à notre journée spéciale de Projection de Classiques du Cinéma dédiée aux séniors, une occasion de se réunir et de redécouvrir des chefs-d'œuvre cinématographiques intemporels.
@@ -547,5 +598,7 @@ Event.create!(
   category: categoryCinema,
   participants_count: 19
 )
+classiques.photo.attach(io: photo, filename: "pilates.jpg", content_type: "image/png")
+classiques.save
 
 puts 'All seeds are generated...'
