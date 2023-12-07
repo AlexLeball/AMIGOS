@@ -9,7 +9,7 @@
     </div>
     <p class="card-category-title category-event"><%= @event.category.name.upcase %></p>
     <h1 class="page-title"><%= @event.title %></h1>
-    <div class="bg-image-event"></div>
+  <%= cl_image_tag @event.photo.key, height: 225, width: 430, crop: :fill %>
     <div class="event-bloc">
       <p class="chapo margin-event"><%= @event.short_description %></p>
       <%= link_to "Rejoindre cet événement", new_event_registration_path(@event), class: 'button-primary-no-shadow a-style margin-event' %>
