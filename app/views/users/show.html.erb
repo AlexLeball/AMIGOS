@@ -6,35 +6,39 @@
 </div>
 
 <div class="form-container margin-60">
-  <h2 class="page-title-no-margin margin60">Vos événements</h2>
+  <h2 class="page-title-no-margin margin60 margin-bottom40">Vos événements</h2>
     <% @your_own_events.each do |event| %>
-      <p class="card-title"><%= event.title %></p>
-      <p class="description">Prochaine session : <%= l(event.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
+        <%= link_to event_path(event), class: "link-style" do %>
+          <p class="card-title"><%= event.title %></p>
+          <p class="description">Prochaine session : <%= l(event.event_date, format: "%A %e %B %Y", locale: :fr).capitalize %></p>
+        <% end %>
     <% end %>
 </div>
 
 <div class="form-container">
-  <h2 class="page-title-no-margin">Vos événements à valider</h2>
+  <h2 class="page-title-no-margin margin-bottom40">Vos événements à valider</h2>
   <% @your_own_events.each do |event| %>
     <% unless event.registrations.empty? %>
-      <div class="card-title"><%= "#{event.title}" %></div>
       <% event.registrations.each do |registration| %>
-        <div class="registration-confirmation">
-          <div class= "description"><%= "#{registration.user.first_name} a demandé à rejoindre cet événement" %></div>
-          <div class= "description"><%= "La demande est #{registration.status}" %></div>
-          <div class="accept-block">
-            <%= link_to 'Acceptée', accept_event_registration_path(event, registration), data: { turbo_method: :patch }, class: "button-secondary-accept" %>
-            <%= link_to 'Rejetée', reject_event_registration_path(event, registration), data: { turbo_method: :patch }, class: "button-secondary-reject" %>
+        <% if registration.status == "pending" %>
+          <div class="registration-confirmation">
+              <div class="card-title"><%= "#{event.title}" %></div>
+              <div class= "description"><%= "#{registration.user.first_name} a demandé à rejoindre cet événement" %></div>
+              <div class= "description"><%= "La demande est #{registration.status}" %></div>
+              <div class="accept-block">
+                <%= link_to 'Acceptée', accept_event_registration_path(event, registration), data: { turbo_method: :patch }, class: "button-secondary-accept" %>
+                <%= link_to 'Rejetée', reject_event_registration_path(event, registration), data: { turbo_method: :patch }, class: "button-secondary-reject" %>
+              </div>
+            <div class="empty-container-40"></div>
           </div>
-          <div class="empty-container-40"></div>
-        </div>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
 </div>
 
 <div class="form-container">
-  <h2 class="page-title-no-margin">Vos favoris</h2>
+  <h2 class="page-title-no-margin margin-bottom40">Vos favoris</h2>
   <% @favorite_events.each do |favorite| %>
     <%= link_to event_path(favorite), class: "link-style" do %>
       <p class="card-title"><%= favorite.title %></p>
