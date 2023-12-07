@@ -26,12 +26,12 @@ class RegistrationsController < ApplicationController
 
   def accept
     Registration.update(status: "accept")
-    redirect_to events_path(@event)
+    redirect_to my_profile_path
   end
 
   def reject
     Registration.update(status: "reject")
-    redirect_to events_path(@event)
+    redirect_to my_profile_path
   end
 
 private

@@ -24,10 +24,9 @@
           <div class="registration-confirmation">
               <div class="card-title"><%= "#{event.title}" %></div>
               <div class= "description"><%= "#{registration.user.first_name} a demandé à rejoindre cet événement" %></div>
-              <div class= "description"><%= "La demande est #{registration.status}" %></div>
               <div class="accept-block">
-                <%= link_to 'Acceptée', accept_event_registration_path(event, registration), data: { turbo_method: :patch }, class: "button-secondary-accept" %>
-                <%= link_to 'Rejetée', reject_event_registration_path(event, registration), data: { turbo_method: :patch }, class: "button-secondary-reject" %>
+                <%= link_to 'Accepter', accept_event_registration_path(event, registration), data: { turbo_method: :patch }, class: "button-secondary-accept" %>
+                <%= link_to 'Refuser', reject_event_registration_path(event, registration), data: { turbo_method: :patch }, class: "button-secondary-reject" %>
               </div>
             <div class="empty-container-40"></div>
           </div>
